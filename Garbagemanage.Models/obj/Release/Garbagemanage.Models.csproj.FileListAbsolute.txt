@@ -1,0 +1,2 @@
+E:\桌面\垃圾分类管理系统\Garbagemanage.Models\obj\Release\Garbagemanage.Models.csproj.CoreCompileInputs.cache
+E:\桌面\垃圾分类管理系统\Garbagemanage.Models\obj\Release\Garbagemanage.Models.csprojAssemblyReference.cache
