@@ -1,0 +1,11 @@
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.csprojAssemblyReference.cache
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.BM.FrmStationList.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.FrmLogin.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.frmMain.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.Properties.Resources.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.UControls.UPager.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.User.FrmEmployeeList.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.User.FrmSpecialList.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.User.FrmUserList.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.csproj.GenerateResource.cache
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Release\Garbagemanage.csproj.CoreCompileInputs.cache

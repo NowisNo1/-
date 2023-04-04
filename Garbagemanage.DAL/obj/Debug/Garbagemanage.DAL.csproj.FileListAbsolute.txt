@@ -1,0 +1,17 @@
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\Garbagemanage.DAL.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\Garbagemanage.DAL.pdb
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\Garbagemanage.Models.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\ZX.Common.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\NPOI.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\NPinyin.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\NPOI.OOXML.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\NPOI.OpenXml4Net.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\ZX.Common.pdb
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\bin\Debug\Garbagemanage.Models.pdb
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\obj\Debug\Garbagemanage.DAL.csprojAssemblyReference.cache
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\obj\Debug\Garbagemanage.DAL.csproj.CoreCompileInputs.cache
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\obj\Debug\Garbagemanage.DAL.csproj.CopyComplete
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\obj\Debug\Garbagemanage.DAL.dll
+E:\桌面\垃圾分类管理系统\Garbagemanage.DAL\obj\Debug\Garbagemanage.DAL.pdb
