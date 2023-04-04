@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttRe = new System.Windows.Forms.Button();
             this.buttok = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvUserList = new System.Windows.Forms.DataGridView();
+            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.ColChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUserNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,6 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +138,7 @@
             this.buttRe.TabIndex = 3;
             this.buttRe.Text = "重置";
             this.buttRe.UseVisualStyleBackColor = false;
+            this.buttRe.Click += new System.EventHandler(this.buttRe_Click);
             // 
             // buttok
             // 
@@ -174,6 +175,7 @@
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(53, 23);
             this.txtAge.TabIndex = 1;
+            this.txtAge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtSex
             // 
@@ -182,6 +184,7 @@
             this.txtSex.Name = "txtSex";
             this.txtSex.Size = new System.Drawing.Size(53, 23);
             this.txtSex.TabIndex = 1;
+            this.txtSex.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtUserName
             // 
@@ -190,6 +193,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(187, 23);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtUserVillage
             // 
@@ -198,6 +202,7 @@
             this.txtUserVillage.Name = "txtUserVillage";
             this.txtUserVillage.Size = new System.Drawing.Size(140, 23);
             this.txtUserVillage.TabIndex = 1;
+            this.txtUserVillage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtAddress
             // 
@@ -206,6 +211,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(140, 23);
             this.txtAddress.TabIndex = 1;
+            this.txtAddress.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtPhone
             // 
@@ -214,6 +220,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(187, 23);
             this.txtPhone.TabIndex = 1;
+            this.txtPhone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtWeight
             // 
@@ -222,6 +229,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(114, 23);
             this.txtWeight.TabIndex = 1;
+            this.txtWeight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtIntegarl
             // 
@@ -230,6 +238,7 @@
             this.txtIntegarl.Name = "txtIntegarl";
             this.txtIntegarl.Size = new System.Drawing.Size(99, 23);
             this.txtIntegarl.TabIndex = 1;
+            this.txtIntegarl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtUserIDnumber
             // 
@@ -238,6 +247,7 @@
             this.txtUserIDnumber.Name = "txtUserIDnumber";
             this.txtUserIDnumber.Size = new System.Drawing.Size(140, 23);
             this.txtUserIDnumber.TabIndex = 1;
+            this.txtUserIDnumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // label10
             // 
@@ -257,6 +267,7 @@
             this.txtUserNumber.Name = "txtUserNumber";
             this.txtUserNumber.Size = new System.Drawing.Size(140, 23);
             this.txtUserNumber.TabIndex = 1;
+            this.txtUserNumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // label8
             // 
@@ -373,11 +384,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(45, 40);
+            this.label1.Location = new System.Drawing.Point(69, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "居民标签ID";
+            this.label1.Text = "居民ID";
             // 
             // buttDel
             // 
@@ -393,6 +404,7 @@
             this.buttDel.TabIndex = 8;
             this.buttDel.Text = "删除";
             this.buttDel.UseVisualStyleBackColor = false;
+            this.buttDel.Click += new System.EventHandler(this.buttDel_Click);
             // 
             // chkShowDel
             // 
@@ -421,6 +433,7 @@
             this.buttRemove.TabIndex = 9;
             this.buttRemove.Text = "移除";
             this.buttRemove.UseVisualStyleBackColor = false;
+            this.buttRemove.Click += new System.EventHandler(this.buttRemove_Click);
             // 
             // buttRecover
             // 
@@ -436,6 +449,7 @@
             this.buttRecover.TabIndex = 10;
             this.buttRecover.Text = "恢复";
             this.buttRecover.UseVisualStyleBackColor = false;
+            this.buttRecover.Click += new System.EventHandler(this.buttRecover_Click);
             // 
             // buttfind
             // 
@@ -494,14 +508,14 @@
             this.dgvUserList.BackgroundColor = System.Drawing.Color.White;
             this.dgvUserList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUserList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUserList.ColumnHeadersHeight = 35;
             this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUserList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -527,109 +541,120 @@
             this.dgvUserList.MultiSelect = false;
             this.dgvUserList.Name = "dgvUserList";
             this.dgvUserList.RowHeadersWidth = 30;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUserList.RowTemplate.Height = 23;
             this.dgvUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserList.Size = new System.Drawing.Size(1107, 333);
             this.dgvUserList.TabIndex = 12;
-            this.dgvUserList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellContentClick);
+            this.dgvUserList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellContentClick_1);
+            // 
+            // uPager1
+            // 
+            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(12, 531);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1107, 46);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 13;
             // 
             // ColChk
             // 
-            this.ColChk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColChk.FillWeight = 50F;
             this.ColChk.HeaderText = "选择";
             this.ColChk.Name = "ColChk";
-            this.ColChk.Width = 44;
             // 
             // colUserNo
             // 
-            this.colUserNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colUserNo.HeaderText = "居民标签ID";
+            this.colUserNo.DataPropertyName = "UserNo";
+            this.colUserNo.FillWeight = 80F;
+            this.colUserNo.HeaderText = "居民ID";
             this.colUserNo.Name = "colUserNo";
             this.colUserNo.ReadOnly = true;
-            this.colUserNo.Width = 89;
             // 
             // colUserName
             // 
-            this.colUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUserName.DataPropertyName = "UserName";
+            this.colUserName.FillWeight = 80F;
             this.colUserName.HeaderText = "姓名";
             this.colUserName.Name = "colUserName";
             this.colUserName.ReadOnly = true;
-            this.colUserName.Width = 50;
             // 
             // colSex
             // 
-            this.colSex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSex.FillWeight = 200F;
+            this.colSex.DataPropertyName = "Sex";
+            this.colSex.FillWeight = 50F;
             this.colSex.HeaderText = "性别";
             this.colSex.Name = "colSex";
             this.colSex.ReadOnly = true;
-            this.colSex.Width = 50;
             // 
             // colAge
             // 
-            this.colAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colAge.FillWeight = 200F;
+            this.colAge.DataPropertyName = "Age";
+            this.colAge.FillWeight = 50F;
             this.colAge.HeaderText = "年龄";
             this.colAge.Name = "colAge";
             this.colAge.ReadOnly = true;
-            this.colAge.Width = 50;
             // 
             // colUserIDnumber
             // 
-            this.colUserIDnumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUserIDnumber.DataPropertyName = "UserIDnumber";
+            this.colUserIDnumber.FillWeight = 180F;
             this.colUserIDnumber.HeaderText = "身份证号";
             this.colUserIDnumber.Name = "colUserIDnumber";
             this.colUserIDnumber.ReadOnly = true;
             // 
             // colPhone
             // 
-            this.colPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.FillWeight = 180F;
             this.colPhone.HeaderText = "联系电话";
             this.colPhone.Name = "colPhone";
             this.colPhone.ReadOnly = true;
             // 
             // colUerVillage
             // 
-            this.colUerVillage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUerVillage.DataPropertyName = "UserVillage";
+            this.colUerVillage.FillWeight = 150F;
             this.colUerVillage.HeaderText = "所在小区";
             this.colUerVillage.Name = "colUerVillage";
             this.colUerVillage.ReadOnly = true;
-            this.colUerVillage.Width = 89;
             // 
             // colUserAddress
             // 
-            this.colUserAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUserAddress.DataPropertyName = "UserAddress";
+            this.colUserAddress.FillWeight = 150F;
             this.colUserAddress.HeaderText = "住址";
             this.colUserAddress.Name = "colUserAddress";
             // 
             // colUserWeight
             // 
-            this.colUserWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUserWeight.DataPropertyName = "UserWeight";
+            this.colUserWeight.FillWeight = 120F;
             this.colUserWeight.HeaderText = "投放重量/kg";
             this.colUserWeight.Name = "colUserWeight";
-            this.colUserWeight.Width = 90;
             // 
             // colUserIntegral
             // 
-            this.colUserIntegral.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colUserIntegral.DataPropertyName = "UserIntegral";
+            this.colUserIntegral.FillWeight = 50F;
             this.colUserIntegral.HeaderText = "积分";
             this.colUserIntegral.Name = "colUserIntegral";
-            this.colUserIntegral.Width = 50;
             // 
             // colSpecial
             // 
-            this.colSpecial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSpecial.FillWeight = 50F;
+            this.colSpecial.DataPropertyName = "Special";
             this.colSpecial.HeaderText = "特殊人群";
             this.colSpecial.Name = "colSpecial";
-            this.colSpecial.Width = 80;
             // 
             // colEdit
             // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colEdit.FillWeight = 50F;
             this.colEdit.HeaderText = "修改";
             this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
@@ -639,7 +664,6 @@
             this.colEdit.Text = "修改";
             this.colEdit.TrackVisitedState = false;
             this.colEdit.UseColumnTextForLinkValue = true;
-            this.colEdit.Width = 45;
             // 
             // colDel
             // 
@@ -676,20 +700,6 @@
             this.colRemove.Text = "移除";
             this.colRemove.TrackVisitedState = false;
             this.colRemove.UseColumnTextForLinkValue = true;
-            // 
-            // uPager1
-            // 
-            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(12, 531);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1107, 46);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 13;
             // 
             // FrmUserList
             // 
@@ -756,6 +766,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvUserList;
+        private UControls.UPager uPager1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserName;
@@ -772,6 +783,5 @@
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
         private System.Windows.Forms.DataGridViewLinkColumn colRecover;
         private System.Windows.Forms.DataGridViewLinkColumn colRemove;
-        private UControls.UPager uPager1;
     }
 }
