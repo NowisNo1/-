@@ -38,9 +38,9 @@ namespace Garbagemanage.DAL
         /// 获取所有站点列表（绑定下拉框）
         /// </summary>
         /// <returns></returns>
-        public List<ResInfo> GetCboStationList()
+        public List<ResInfo> GetCboUserList()
         {
-            return GetModelList("IsDeleted=0", "UserId,UserName", "");
+            return GetModelList("Special=1 and IsDeleted=0", "UserId,UserName", "");
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Garbagemanage.DAL
         /// <param name="value"></param>
         /// <param name="isNo"></param>
         /// <returns></returns>
-        public bool ExistStationNoOrName(string value, bool isNo)
+        public bool ExistUserNoOrName(string value, bool isNo)
         {
             if (isNo)
                 return ExistsByName("UserNo", value);
@@ -58,14 +58,14 @@ namespace Garbagemanage.DAL
         }
 
         /// <summary>
-        /// 添加站点，返回站点编号
+        /// 添加居民，返回居民编号
         /// </summary>
         /// <param name="station"></param>
         /// <returns></returns>
-        public int AddStation(ResInfo station)
+        public int AddUser(ResInfo user)
         {
             string cols = CreateSql.GetColNames<ResInfo>("UserId");
-            return Add(station, cols, 1);
+            return Add(user, cols, 1);
         }
 
         /// <summary>

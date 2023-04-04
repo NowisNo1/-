@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtmiaoshu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,6 +55,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStationList = new System.Windows.Forms.DataGridView();
+            this.buttDel = new System.Windows.Forms.Button();
+            this.chkShowDel = new System.Windows.Forms.CheckBox();
+            this.buttRemove = new System.Windows.Forms.Button();
+            this.buttRecover = new System.Windows.Forms.Button();
+            this.buttfind = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.ColChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colSpeNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSPeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,19 +74,10 @@
             this.colSpecialVillage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSpeAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNewThrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.buttDel = new System.Windows.Forms.Button();
-            this.chkShowDel = new System.Windows.Forms.CheckBox();
-            this.buttRemove = new System.Windows.Forms.Button();
-            this.buttRecover = new System.Windows.Forms.Button();
-            this.buttfind = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).BeginInit();
             this.SuspendLayout();
@@ -132,11 +132,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(282, 111);
+            this.label7.Location = new System.Drawing.Point(306, 111);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 17);
+            this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 4;
-            this.label7.Text = "垃圾站点描述";
+            this.label7.Text = "人员描述";
             // 
             // buttRe
             // 
@@ -344,11 +344,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(45, 27);
+            this.label1.Location = new System.Drawing.Point(69, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "人员标签ID";
+            this.label1.Text = "人员ID";
             // 
             // dgvStationList
             // 
@@ -361,14 +361,14 @@
             this.dgvStationList.BackgroundColor = System.Drawing.Color.White;
             this.dgvStationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStationList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStationList.ColumnHeadersHeight = 35;
             this.dgvStationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -382,7 +382,6 @@
             this.colSpecialVillage,
             this.colSpeAddress,
             this.colNewThrow,
-            this.colRemark,
             this.colEdit,
             this.colDel,
             this.colRecover,
@@ -393,143 +392,13 @@
             this.dgvStationList.MultiSelect = false;
             this.dgvStationList.Name = "dgvStationList";
             this.dgvStationList.RowHeadersWidth = 30;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStationList.RowTemplate.Height = 23;
             this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStationList.Size = new System.Drawing.Size(1107, 299);
+            this.dgvStationList.Size = new System.Drawing.Size(1107, 306);
             this.dgvStationList.TabIndex = 7;
-            // 
-            // ColChk
-            // 
-            this.ColChk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColChk.HeaderText = "选择";
-            this.ColChk.Name = "ColChk";
-            this.ColChk.Width = 44;
-            // 
-            // colSpeNo
-            // 
-            this.colSpeNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSpeNo.HeaderText = "人员标签ID";
-            this.colSpeNo.Name = "colSpeNo";
-            this.colSpeNo.ReadOnly = true;
-            this.colSpeNo.Width = 89;
-            // 
-            // colSPeName
-            // 
-            this.colSPeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSPeName.HeaderText = "姓名";
-            this.colSPeName.Name = "colSPeName";
-            this.colSPeName.ReadOnly = true;
-            this.colSPeName.Width = 60;
-            // 
-            // colSex
-            // 
-            this.colSex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSex.FillWeight = 200F;
-            this.colSex.HeaderText = "性别";
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            this.colSex.Width = 50;
-            // 
-            // colAge
-            // 
-            this.colAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colAge.FillWeight = 200F;
-            this.colAge.HeaderText = "年龄";
-            this.colAge.Name = "colAge";
-            this.colAge.ReadOnly = true;
-            this.colAge.Width = 50;
-            // 
-            // colSpeIDnumber
-            // 
-            this.colSpeIDnumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSpeIDnumber.HeaderText = "身份证号";
-            this.colSpeIDnumber.Name = "colSpeIDnumber";
-            this.colSpeIDnumber.ReadOnly = true;
-            // 
-            // colphone
-            // 
-            this.colphone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colphone.HeaderText = "联系电话";
-            this.colphone.Name = "colphone";
-            this.colphone.ReadOnly = true;
-            // 
-            // colSpecialVillage
-            // 
-            this.colSpecialVillage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSpecialVillage.HeaderText = "所在小区";
-            this.colSpecialVillage.Name = "colSpecialVillage";
-            // 
-            // colSpeAddress
-            // 
-            this.colSpeAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSpeAddress.HeaderText = "住址";
-            this.colSpeAddress.Name = "colSpeAddress";
-            // 
-            // colNewThrow
-            // 
-            this.colNewThrow.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewThrow.HeaderText = "最新投放时间";
-            this.colNewThrow.Name = "colNewThrow";
-            this.colNewThrow.ReadOnly = true;
-            // 
-            // colRemark
-            // 
-            this.colRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRemark.HeaderText = "描述";
-            this.colRemark.Name = "colRemark";
-            // 
-            // colEdit
-            // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colEdit.FillWeight = 50F;
-            this.colEdit.HeaderText = "修改";
-            this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colEdit.Text = "修改";
-            this.colEdit.TrackVisitedState = false;
-            this.colEdit.UseColumnTextForLinkValue = true;
-            this.colEdit.Width = 45;
-            // 
-            // colDel
-            // 
-            this.colDel.FillWeight = 50F;
-            this.colDel.HeaderText = "删除";
-            this.colDel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colDel.Name = "colDel";
-            this.colDel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colDel.Text = "删除";
-            this.colDel.TrackVisitedState = false;
-            this.colDel.UseColumnTextForLinkValue = true;
-            // 
-            // colRecover
-            // 
-            this.colRecover.FillWeight = 50F;
-            this.colRecover.HeaderText = "恢复";
-            this.colRecover.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colRecover.Name = "colRecover";
-            this.colRecover.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRecover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colRecover.Text = "恢复";
-            this.colRecover.TrackVisitedState = false;
-            this.colRecover.UseColumnTextForLinkValue = true;
-            // 
-            // colRemove
-            // 
-            this.colRemove.FillWeight = 50F;
-            this.colRemove.HeaderText = "移除";
-            this.colRemove.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colRemove.Name = "colRemove";
-            this.colRemove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRemove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colRemove.Text = "移除";
-            this.colRemove.TrackVisitedState = false;
-            this.colRemove.UseColumnTextForLinkValue = true;
             // 
             // buttDel
             // 
@@ -633,14 +502,139 @@
             this.label12.Size = new System.Drawing.Size(68, 17);
             this.label12.TabIndex = 5;
             this.label12.Text = "查询关键词";
-            
-            
+            // 
+            // uPager1
+            // 
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(12, 532);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1107, 46);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 13;
+            // 
+            // ColChk
+            // 
+            this.ColChk.FillWeight = 70F;
+            this.ColChk.HeaderText = "选择";
+            this.ColChk.Name = "ColChk";
+            // 
+            // colSpeNo
+            // 
+            this.colSpeNo.HeaderText = "人员ID";
+            this.colSpeNo.Name = "colSpeNo";
+            this.colSpeNo.ReadOnly = true;
+            // 
+            // colSPeName
+            // 
+            this.colSPeName.FillWeight = 70F;
+            this.colSPeName.HeaderText = "姓名";
+            this.colSPeName.Name = "colSPeName";
+            this.colSPeName.ReadOnly = true;
+            // 
+            // colSex
+            // 
+            this.colSex.FillWeight = 80F;
+            this.colSex.HeaderText = "性别";
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            // 
+            // colAge
+            // 
+            this.colAge.FillWeight = 80F;
+            this.colAge.HeaderText = "年龄";
+            this.colAge.Name = "colAge";
+            this.colAge.ReadOnly = true;
+            // 
+            // colSpeIDnumber
+            // 
+            this.colSpeIDnumber.FillWeight = 150F;
+            this.colSpeIDnumber.HeaderText = "身份证号";
+            this.colSpeIDnumber.Name = "colSpeIDnumber";
+            this.colSpeIDnumber.ReadOnly = true;
+            // 
+            // colphone
+            // 
+            this.colphone.FillWeight = 150F;
+            this.colphone.HeaderText = "联系电话";
+            this.colphone.Name = "colphone";
+            this.colphone.ReadOnly = true;
+            // 
+            // colSpecialVillage
+            // 
+            this.colSpecialVillage.FillWeight = 180F;
+            this.colSpecialVillage.HeaderText = "所在小区";
+            this.colSpecialVillage.Name = "colSpecialVillage";
+            // 
+            // colSpeAddress
+            // 
+            this.colSpeAddress.FillWeight = 180F;
+            this.colSpeAddress.HeaderText = "住址";
+            this.colSpeAddress.Name = "colSpeAddress";
+            // 
+            // colNewThrow
+            // 
+            this.colNewThrow.FillWeight = 150F;
+            this.colNewThrow.HeaderText = "最新投放时间";
+            this.colNewThrow.Name = "colNewThrow";
+            this.colNewThrow.ReadOnly = true;
+            // 
+            // colEdit
+            // 
+            this.colEdit.FillWeight = 50F;
+            this.colEdit.HeaderText = "修改";
+            this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEdit.Text = "修改";
+            this.colEdit.TrackVisitedState = false;
+            this.colEdit.UseColumnTextForLinkValue = true;
+            // 
+            // colDel
+            // 
+            this.colDel.FillWeight = 50F;
+            this.colDel.HeaderText = "删除";
+            this.colDel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colDel.Name = "colDel";
+            this.colDel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDel.Text = "删除";
+            this.colDel.TrackVisitedState = false;
+            this.colDel.UseColumnTextForLinkValue = true;
+            // 
+            // colRecover
+            // 
+            this.colRecover.FillWeight = 50F;
+            this.colRecover.HeaderText = "恢复";
+            this.colRecover.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colRecover.Name = "colRecover";
+            this.colRecover.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRecover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colRecover.Text = "恢复";
+            this.colRecover.TrackVisitedState = false;
+            this.colRecover.UseColumnTextForLinkValue = true;
+            // 
+            // colRemove
+            // 
+            this.colRemove.FillWeight = 50F;
+            this.colRemove.HeaderText = "移除";
+            this.colRemove.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colRemove.Name = "colRemove";
+            this.colRemove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRemove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colRemove.Text = "移除";
+            this.colRemove.TrackVisitedState = false;
+            this.colRemove.UseColumnTextForLinkValue = true;
             // 
             // FrmSpecialList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 581);
+            this.Controls.Add(this.uPager1);
             this.Controls.Add(this.dgvStationList);
             this.Controls.Add(this.buttDel);
             this.Controls.Add(this.chkShowDel);
@@ -706,10 +700,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpecialVillage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpeAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewThrow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
         private System.Windows.Forms.DataGridViewLinkColumn colEdit;
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
         private System.Windows.Forms.DataGridViewLinkColumn colRecover;
         private System.Windows.Forms.DataGridViewLinkColumn colRemove;
+        private UControls.UPager uPager1;
     }
 }

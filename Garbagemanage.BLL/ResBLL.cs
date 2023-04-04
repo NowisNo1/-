@@ -29,9 +29,9 @@ namespace Garbagemanage.BLL
         /// 获取绑定下拉框的所有居民信息列表
         /// </summary>
         /// <returns></returns>
-        public List<ResInfo> GetCboStationList()
+        public List<ResInfo> GetCboUserList()
         {
-            return resDAL.GetCboStationList();
+            return resDAL.GetCboUserList();
         }
 
         /// <summary>
@@ -40,11 +40,11 @@ namespace Garbagemanage.BLL
         /// <param name="station"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public int AddUser(ResInfo User)
+        public int AddUser(ResInfo user)
         {
-            if (User == null)
+            if (user == null)
                 throw new Exception("居民信息不能为空！");
-            return resDAL.AddStation(User);
+            return resDAL.AddUser(user);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Garbagemanage.BLL
         /// <returns></returns>
         public bool ExistUserNo(string UserNo)
         {
-            return resDAL.ExistStationNoOrName(UserNo, true);
+            return resDAL.ExistUserNoOrName(UserNo, true);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Garbagemanage.BLL
         /// <returns></returns>
         public bool ExistUserName(string userName)
         {
-            return resDAL.ExistStationNoOrName(userName, false);
+            return resDAL.ExistUserNoOrName(userName, false);
         }
 
         /// <summary>
