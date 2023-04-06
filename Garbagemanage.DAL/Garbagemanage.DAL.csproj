@@ -53,6 +53,7 @@
     <Compile Include="MenuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResDAL.cs" />
+    <Compile Include="SpecialDAL.cs" />
     <Compile Include="StationDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="ViewEmployeeDAL.cs" />

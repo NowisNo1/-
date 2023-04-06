@@ -1,4 +1,4 @@
-﻿namespace Garbagemanage.User
+﻿namespace Garbagemanage.Special
 {
     partial class FrmSpecialList
     {
@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtmiaoshu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttRe = new System.Windows.Forms.Button();
             this.buttok = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtStationAddress = new System.Windows.Forms.TextBox();
-            this.txtStationName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.txtSex = new System.Windows.Forms.TextBox();
+            this.txtSpeName = new System.Windows.Forms.TextBox();
+            this.txtVillage = new System.Windows.Forms.TextBox();
+            this.txtNewTime = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtManager = new System.Windows.Forms.TextBox();
+            this.txtSpeIDnumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtStationNumber = new System.Windows.Forms.TextBox();
+            this.txtSpeNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblerr = new System.Windows.Forms.Label();
@@ -54,16 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvStationList = new System.Windows.Forms.DataGridView();
-            this.buttDel = new System.Windows.Forms.Button();
-            this.chkShowDel = new System.Windows.Forms.CheckBox();
-            this.buttRemove = new System.Windows.Forms.Button();
-            this.buttRecover = new System.Windows.Forms.Button();
-            this.buttfind = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.uPager1 = new Garbagemanage.UControls.UPager();
+            this.dgvSpeList = new System.Windows.Forms.DataGridView();
             this.ColChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colSpeNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSPeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +69,17 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.buttDel = new System.Windows.Forms.Button();
+            this.chkShowDel = new System.Windows.Forms.CheckBox();
+            this.buttRemove = new System.Windows.Forms.Button();
+            this.buttRecover = new System.Windows.Forms.Button();
+            this.buttfind = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpeList)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,17 +90,17 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.buttRe);
             this.groupBox1.Controls.Add(this.buttok);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtStationAddress);
-            this.groupBox1.Controls.Add(this.txtStationName);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.txtTime);
+            this.groupBox1.Controls.Add(this.txtAge);
+            this.groupBox1.Controls.Add(this.txtSex);
+            this.groupBox1.Controls.Add(this.txtSpeName);
+            this.groupBox1.Controls.Add(this.txtVillage);
+            this.groupBox1.Controls.Add(this.txtNewTime);
+            this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.txtManager);
+            this.groupBox1.Controls.Add(this.txtSpeIDnumber);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtStationNumber);
+            this.groupBox1.Controls.Add(this.txtSpeNumber);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblerr);
@@ -167,54 +167,55 @@
             this.buttok.TabIndex = 3;
             this.buttok.Text = "添加";
             this.buttok.UseVisualStyleBackColor = false;
+            this.buttok.Click += new System.EventHandler(this.buttok_Click);
             // 
-            // textBox1
+            // txtAge
             // 
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(605, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 23);
-            this.textBox1.TabIndex = 1;
+            this.txtAge.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtAge.Location = new System.Drawing.Point(605, 66);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(53, 23);
+            this.txtAge.TabIndex = 1;
             // 
-            // txtStationAddress
+            // txtSex
             // 
-            this.txtStationAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtStationAddress.Location = new System.Drawing.Point(605, 27);
-            this.txtStationAddress.Name = "txtStationAddress";
-            this.txtStationAddress.Size = new System.Drawing.Size(53, 23);
-            this.txtStationAddress.TabIndex = 1;
+            this.txtSex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSex.Location = new System.Drawing.Point(605, 27);
+            this.txtSex.Name = "txtSex";
+            this.txtSex.Size = new System.Drawing.Size(53, 23);
+            this.txtSex.TabIndex = 1;
             // 
-            // txtStationName
+            // txtSpeName
             // 
-            this.txtStationName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtStationName.Location = new System.Drawing.Point(368, 27);
-            this.txtStationName.Name = "txtStationName";
-            this.txtStationName.Size = new System.Drawing.Size(187, 23);
-            this.txtStationName.TabIndex = 1;
+            this.txtSpeName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSpeName.Location = new System.Drawing.Point(368, 27);
+            this.txtSpeName.Name = "txtSpeName";
+            this.txtSpeName.Size = new System.Drawing.Size(187, 23);
+            this.txtSpeName.TabIndex = 1;
             // 
-            // textBox2
+            // txtVillage
             // 
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(735, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 23);
-            this.textBox2.TabIndex = 1;
+            this.txtVillage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtVillage.Location = new System.Drawing.Point(735, 24);
+            this.txtVillage.Name = "txtVillage";
+            this.txtVillage.Size = new System.Drawing.Size(140, 23);
+            this.txtVillage.TabIndex = 1;
             // 
-            // textBox3
+            // txtNewTime
             // 
-            this.textBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(123, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 23);
-            this.textBox3.TabIndex = 1;
+            this.txtNewTime.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNewTime.Location = new System.Drawing.Point(123, 108);
+            this.txtNewTime.Name = "txtNewTime";
+            this.txtNewTime.Size = new System.Drawing.Size(140, 23);
+            this.txtNewTime.TabIndex = 1;
             // 
-            // txtTime
+            // txtAddress
             // 
-            this.txtTime.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtTime.Location = new System.Drawing.Point(735, 66);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(140, 23);
-            this.txtTime.TabIndex = 1;
+            this.txtAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtAddress.Location = new System.Drawing.Point(735, 66);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(140, 23);
+            this.txtAddress.TabIndex = 1;
             // 
             // txtPhone
             // 
@@ -224,13 +225,13 @@
             this.txtPhone.Size = new System.Drawing.Size(187, 23);
             this.txtPhone.TabIndex = 1;
             // 
-            // txtManager
+            // txtSpeIDnumber
             // 
-            this.txtManager.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtManager.Location = new System.Drawing.Point(123, 66);
-            this.txtManager.Name = "txtManager";
-            this.txtManager.Size = new System.Drawing.Size(140, 23);
-            this.txtManager.TabIndex = 1;
+            this.txtSpeIDnumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSpeIDnumber.Location = new System.Drawing.Point(123, 66);
+            this.txtSpeIDnumber.Name = "txtSpeIDnumber";
+            this.txtSpeIDnumber.Size = new System.Drawing.Size(140, 23);
+            this.txtSpeIDnumber.TabIndex = 1;
             // 
             // label10
             // 
@@ -254,13 +255,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "最新投放时间";
             // 
-            // txtStationNumber
+            // txtSpeNumber
             // 
-            this.txtStationNumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtStationNumber.Location = new System.Drawing.Point(123, 24);
-            this.txtStationNumber.Name = "txtStationNumber";
-            this.txtStationNumber.Size = new System.Drawing.Size(140, 23);
-            this.txtStationNumber.TabIndex = 1;
+            this.txtSpeNumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSpeNumber.Location = new System.Drawing.Point(123, 24);
+            this.txtSpeNumber.Name = "txtSpeNumber";
+            this.txtSpeNumber.Size = new System.Drawing.Size(140, 23);
+            this.txtSpeNumber.TabIndex = 1;
             // 
             // label8
             // 
@@ -350,28 +351,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "人员ID";
             // 
-            // dgvStationList
+            // dgvSpeList
             // 
-            this.dgvStationList.AllowUserToAddRows = false;
-            this.dgvStationList.AllowUserToDeleteRows = false;
-            this.dgvStationList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSpeList.AllowUserToAddRows = false;
+            this.dgvSpeList.AllowUserToDeleteRows = false;
+            this.dgvSpeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvStationList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStationList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvStationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStationList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvStationList.ColumnHeadersHeight = 35;
-            this.dgvStationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvStationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSpeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSpeList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSpeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSpeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSpeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSpeList.ColumnHeadersHeight = 35;
+            this.dgvSpeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvSpeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColChk,
             this.colSpeNo,
             this.colSPeName,
@@ -386,134 +387,19 @@
             this.colDel,
             this.colRecover,
             this.colRemove});
-            this.dgvStationList.EnableHeadersVisualStyles = false;
-            this.dgvStationList.GridColor = System.Drawing.Color.LightGray;
-            this.dgvStationList.Location = new System.Drawing.Point(12, 227);
-            this.dgvStationList.MultiSelect = false;
-            this.dgvStationList.Name = "dgvStationList";
-            this.dgvStationList.RowHeadersWidth = 30;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvStationList.RowTemplate.Height = 23;
-            this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStationList.Size = new System.Drawing.Size(1107, 306);
-            this.dgvStationList.TabIndex = 7;
-            // 
-            // buttDel
-            // 
-            this.buttDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttDel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.buttDel.FlatAppearance.BorderSize = 0;
-            this.buttDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttDel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttDel.ForeColor = System.Drawing.Color.White;
-            this.buttDel.Location = new System.Drawing.Point(932, 196);
-            this.buttDel.Name = "buttDel";
-            this.buttDel.Size = new System.Drawing.Size(62, 23);
-            this.buttDel.TabIndex = 9;
-            this.buttDel.Text = "删除";
-            this.buttDel.UseVisualStyleBackColor = false;
-            // 
-            // chkShowDel
-            // 
-            this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkShowDel.AutoSize = true;
-            this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.chkShowDel.Location = new System.Drawing.Point(1056, 198);
-            this.chkShowDel.Name = "chkShowDel";
-            this.chkShowDel.Size = new System.Drawing.Size(63, 21);
-            this.chkShowDel.TabIndex = 8;
-            this.chkShowDel.Text = "已删除";
-            this.chkShowDel.UseVisualStyleBackColor = true;
-            // 
-            // buttRemove
-            // 
-            this.buttRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttRemove.BackColor = System.Drawing.Color.RoyalBlue;
-            this.buttRemove.FlatAppearance.BorderSize = 0;
-            this.buttRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttRemove.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttRemove.ForeColor = System.Drawing.Color.White;
-            this.buttRemove.Location = new System.Drawing.Point(851, 196);
-            this.buttRemove.Name = "buttRemove";
-            this.buttRemove.Size = new System.Drawing.Size(62, 23);
-            this.buttRemove.TabIndex = 10;
-            this.buttRemove.Text = "移除";
-            this.buttRemove.UseVisualStyleBackColor = false;
-            // 
-            // buttRecover
-            // 
-            this.buttRecover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttRecover.BackColor = System.Drawing.Color.RoyalBlue;
-            this.buttRecover.FlatAppearance.BorderSize = 0;
-            this.buttRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttRecover.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttRecover.ForeColor = System.Drawing.Color.White;
-            this.buttRecover.Location = new System.Drawing.Point(769, 196);
-            this.buttRecover.Name = "buttRecover";
-            this.buttRecover.Size = new System.Drawing.Size(62, 23);
-            this.buttRecover.TabIndex = 11;
-            this.buttRecover.Text = "恢复";
-            this.buttRecover.UseVisualStyleBackColor = false;
-            // 
-            // buttfind
-            // 
-            this.buttfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttfind.BackColor = System.Drawing.Color.RoyalBlue;
-            this.buttfind.FlatAppearance.BorderSize = 0;
-            this.buttfind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttfind.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttfind.ForeColor = System.Drawing.Color.White;
-            this.buttfind.Location = new System.Drawing.Point(619, 196);
-            this.buttfind.Name = "buttfind";
-            this.buttfind.Size = new System.Drawing.Size(62, 23);
-            this.buttfind.TabIndex = 12;
-            this.buttfind.Text = "查询";
-            this.buttfind.UseVisualStyleBackColor = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox6.Location = new System.Drawing.Point(284, 196);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(288, 23);
-            this.textBox6.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(24, 197);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 19);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "特殊人群信息列表";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(206, 199);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 17);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "查询关键词";
-            // 
-            // uPager1
-            // 
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(12, 532);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1107, 46);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 13;
+            this.dgvSpeList.EnableHeadersVisualStyles = false;
+            this.dgvSpeList.GridColor = System.Drawing.Color.LightGray;
+            this.dgvSpeList.Location = new System.Drawing.Point(12, 227);
+            this.dgvSpeList.MultiSelect = false;
+            this.dgvSpeList.Name = "dgvSpeList";
+            this.dgvSpeList.RowHeadersWidth = 30;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvSpeList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSpeList.RowTemplate.Height = 23;
+            this.dgvSpeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSpeList.Size = new System.Drawing.Size(1107, 306);
+            this.dgvSpeList.TabIndex = 7;
             // 
             // ColChk
             // 
@@ -629,13 +515,129 @@
             this.colRemove.TrackVisitedState = false;
             this.colRemove.UseColumnTextForLinkValue = true;
             // 
+            // buttDel
+            // 
+            this.buttDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttDel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttDel.FlatAppearance.BorderSize = 0;
+            this.buttDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttDel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttDel.ForeColor = System.Drawing.Color.White;
+            this.buttDel.Location = new System.Drawing.Point(932, 196);
+            this.buttDel.Name = "buttDel";
+            this.buttDel.Size = new System.Drawing.Size(62, 23);
+            this.buttDel.TabIndex = 9;
+            this.buttDel.Text = "删除";
+            this.buttDel.UseVisualStyleBackColor = false;
+            // 
+            // chkShowDel
+            // 
+            this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkShowDel.AutoSize = true;
+            this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.chkShowDel.Location = new System.Drawing.Point(1056, 198);
+            this.chkShowDel.Name = "chkShowDel";
+            this.chkShowDel.Size = new System.Drawing.Size(63, 21);
+            this.chkShowDel.TabIndex = 8;
+            this.chkShowDel.Text = "已删除";
+            this.chkShowDel.UseVisualStyleBackColor = true;
+            // 
+            // buttRemove
+            // 
+            this.buttRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttRemove.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttRemove.FlatAppearance.BorderSize = 0;
+            this.buttRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttRemove.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttRemove.ForeColor = System.Drawing.Color.White;
+            this.buttRemove.Location = new System.Drawing.Point(851, 196);
+            this.buttRemove.Name = "buttRemove";
+            this.buttRemove.Size = new System.Drawing.Size(62, 23);
+            this.buttRemove.TabIndex = 10;
+            this.buttRemove.Text = "移除";
+            this.buttRemove.UseVisualStyleBackColor = false;
+            // 
+            // buttRecover
+            // 
+            this.buttRecover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttRecover.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttRecover.FlatAppearance.BorderSize = 0;
+            this.buttRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttRecover.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttRecover.ForeColor = System.Drawing.Color.White;
+            this.buttRecover.Location = new System.Drawing.Point(769, 196);
+            this.buttRecover.Name = "buttRecover";
+            this.buttRecover.Size = new System.Drawing.Size(62, 23);
+            this.buttRecover.TabIndex = 11;
+            this.buttRecover.Text = "恢复";
+            this.buttRecover.UseVisualStyleBackColor = false;
+            // 
+            // buttfind
+            // 
+            this.buttfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttfind.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttfind.FlatAppearance.BorderSize = 0;
+            this.buttfind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttfind.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttfind.ForeColor = System.Drawing.Color.White;
+            this.buttfind.Location = new System.Drawing.Point(619, 196);
+            this.buttfind.Name = "buttfind";
+            this.buttfind.Size = new System.Drawing.Size(62, 23);
+            this.buttfind.TabIndex = 12;
+            this.buttfind.Text = "查询";
+            this.buttfind.UseVisualStyleBackColor = false;
+            this.buttfind.Click += new System.EventHandler(this.buttfind_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox6.Location = new System.Drawing.Point(284, 196);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(288, 23);
+            this.textBox6.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.Location = new System.Drawing.Point(24, 197);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(121, 19);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "特殊人群信息列表";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(206, 199);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 17);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "查询关键词";
+            // 
+            // uPager1
+            // 
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(12, 532);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1107, 46);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 13;
+            // 
             // FrmSpecialList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 581);
             this.Controls.Add(this.uPager1);
-            this.Controls.Add(this.dgvStationList);
+            this.Controls.Add(this.dgvSpeList);
             this.Controls.Add(this.buttDel);
             this.Controls.Add(this.chkShowDel);
             this.Controls.Add(this.buttRemove);
@@ -645,11 +647,13 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSpecialList";
             this.Text = "特殊人群信息";
+            this.Load += new System.EventHandler(this.FrmSpecialList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,14 +664,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttRe;
         private System.Windows.Forms.Button buttok;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtStationAddress;
-        private System.Windows.Forms.TextBox txtStationName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.TextBox txtSex;
+        private System.Windows.Forms.TextBox txtSpeName;
+        private System.Windows.Forms.TextBox txtVillage;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtManager;
+        private System.Windows.Forms.TextBox txtSpeIDnumber;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtStationNumber;
+        private System.Windows.Forms.TextBox txtSpeNumber;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblerr;
         private System.Windows.Forms.Label label4;
@@ -677,11 +681,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtmiaoshu;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.TextBox txtNewTime;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgvStationList;
+        private System.Windows.Forms.DataGridView dgvSpeList;
         private System.Windows.Forms.Button buttDel;
         private System.Windows.Forms.CheckBox chkShowDel;
         private System.Windows.Forms.Button buttRemove;
