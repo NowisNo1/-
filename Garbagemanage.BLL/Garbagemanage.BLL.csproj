@@ -45,6 +45,7 @@
     <Compile Include="MenuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResBLL.cs" />
+    <Compile Include="SpeBLL.cs" />
     <Compile Include="StationBLL.cs" />
     <Compile Include="UserBLL.cs" />
   </ItemGroup>

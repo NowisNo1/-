@@ -12,7 +12,7 @@ namespace Garbagemanage.Models
     /// </summary>
     [Table("Special")]
     [PrimaryKey("SpeId", autoIncrement = true)]
-    public class SpecialInfos
+    public class SpeInfo
     {
         /// <summary>
         /// 人员编号

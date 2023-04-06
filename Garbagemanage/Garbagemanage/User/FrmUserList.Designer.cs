@@ -65,7 +65,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvUserList = new System.Windows.Forms.DataGridView();
-            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.ColChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUserNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +81,7 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.uPager1 = new Garbagemanage.UControls.UPager();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
             this.SuspendLayout();
@@ -550,20 +550,6 @@
             this.dgvUserList.TabIndex = 12;
             this.dgvUserList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellContentClick_1);
             // 
-            // uPager1
-            // 
-            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(12, 531);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1107, 46);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 13;
-            // 
             // ColChk
             // 
             this.ColChk.FillWeight = 50F;
@@ -701,6 +687,20 @@
             this.colRemove.TrackVisitedState = false;
             this.colRemove.UseColumnTextForLinkValue = true;
             // 
+            // uPager1
+            // 
+            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(12, 531);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1107, 46);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 13;
+            // 
             // FrmUserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -717,6 +717,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUserList";
             this.ShowIcon = false;
             this.Text = "居民信息";

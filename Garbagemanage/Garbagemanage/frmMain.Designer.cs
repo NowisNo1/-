@@ -202,7 +202,7 @@
             this.站点信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.站点信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.站点信息ToolStripMenuItem.Name = "站点信息ToolStripMenuItem";
-            this.站点信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.站点信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.站点信息ToolStripMenuItem.Text = "站点信息";
             // 
             // 居民信息ToolStripMenuItem
@@ -211,7 +211,7 @@
             this.居民信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.居民信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.居民信息ToolStripMenuItem.Name = "居民信息ToolStripMenuItem";
-            this.居民信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.居民信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.居民信息ToolStripMenuItem.Text = "居民信息";
             // 
             // 员工信息ToolStripMenuItem
@@ -220,7 +220,7 @@
             this.员工信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.员工信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.员工信息ToolStripMenuItem.Name = "员工信息ToolStripMenuItem";
-            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.员工信息ToolStripMenuItem.Text = "员工信息";
             // 
             // frmMain
