@@ -11,9 +11,9 @@ namespace Garbagemanage.BLL
 {
     public class SpeBLL
     {
-        SpecialDAL speDAL = new SpecialDAL();
+        SpeDAL speDAL = new SpeDAL();
         /// <summary>
-        /// 分页查询站点信息
+        /// 分页查询人员信息
         /// </summary>
         /// <param name="keywords"></param>
         /// <param name="isShowDel"></param>
@@ -26,7 +26,7 @@ namespace Garbagemanage.BLL
             return speDAL.FindSpeList(keywords, isDeleted, startIndex, pageSize);
         }
         /// <summary>
-        /// 获取绑定下拉框的所有站点列表
+        /// 获取绑定下拉框的所有人员列表
         /// </summary>
         /// <returns></returns>
         public List<SpeInfo> GetCboSpeList()
@@ -35,7 +35,7 @@ namespace Garbagemanage.BLL
         }
 
         /// <summary>
-        /// 添加站点，返回站点编号
+        /// 添加人员，返回人员编号
         /// </summary>
         /// <param name="station"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace Garbagemanage.BLL
             return speDAL.AddSpe(spe);
         }
         /// <summary>
-        /// 判断居民编码是否存在
+        /// 判断人员编码是否存在
         /// </summary>
         /// <param name="stationNo"></param>
         /// <returns></returns>
@@ -57,7 +57,7 @@ namespace Garbagemanage.BLL
         }
 
         /// <summary>
-        /// 判断居民姓名是否存在
+        /// 判断人员姓名是否存在
         /// </summary>
         /// <param name="stationName"></param>
         /// <returns></returns>
@@ -67,7 +67,7 @@ namespace Garbagemanage.BLL
         }
 
         /// <summary>
-        /// 获取指定居民信息
+        /// 获取指定人员信息
         /// </summary>
         /// <param name="stationId"></param>
         /// <returns></returns>
@@ -77,15 +77,15 @@ namespace Garbagemanage.BLL
         }
 
         /// <summary>
-        /// 删除居民（逻辑删除）
+        /// 删除人员（逻辑删除）
         /// </summary>
         /// <param name="stations"></param>
         /// <returns></returns>
         public string DeleteSpe(List<SpeInfo> spes)
         {
             string reStr = "";
-            string hasNames = "";//存储运营中居民名称字符串
-            List<int> speIds = new List<int>();//存储符合删除的居民编号
+            string hasNames = "";//存储运营中人员名称字符串
+            List<int> speIds = new List<int>();//存储符合删除的人员编号
             foreach (SpeInfo spe in spes)
             {
                 //if (false)
@@ -121,7 +121,7 @@ namespace Garbagemanage.BLL
             return reStr;
         }
         /// <summary>
-        /// 恢复居民信息
+        /// 恢复人员信息
         /// </summary>
         /// <param name="stationIds"></param>
         /// <returns></returns>
@@ -131,13 +131,25 @@ namespace Garbagemanage.BLL
         }
 
         /// <summary>
-        /// 移除居民信息
+        /// 移除人员信息
         /// </summary>
         /// <param name="stationIds"></param>
         /// <returns></returns>
         public bool RemoveSpes(List<int> speIds)
         {
             return speDAL.UpdateSpeDelState(speIds, 1, 2);
+        }
+        /// <summary>
+        /// 修改人员信息
+        /// </summary>
+        /// <param name="station"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public bool UpdateSpe(SpeInfo Spe)
+        {
+            if (Spe == null)
+                throw new Exception("人员信息不能为空！");
+            return speDAL.Update(Spe, "");
         }
     }
 }

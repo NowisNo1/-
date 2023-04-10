@@ -34,7 +34,7 @@ namespace Garbagemanage.Models
         /// <summary>
         /// 年龄
         /// </summary>
-        public int? Age { get; set; }
+        public string Age { get; set; }
         /// <summary>
         /// 身份证号
         /// </summary>
@@ -55,7 +55,7 @@ namespace Garbagemanage.Models
         /// <summary>
         /// 员工类别
         /// </summary>
-        public int EmpTypeId { get; set; }
+        public string EmpTypled { get; set; }
        
     }
 }
