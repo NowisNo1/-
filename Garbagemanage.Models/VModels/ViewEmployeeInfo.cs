@@ -30,7 +30,7 @@ namespace Garbagemanage.VModels
             Age= empInfo.Age;
             Phone= empInfo.Phone;
             //EmpPYNo= empInfo.EmpPYNo;
-            EmpTypeId= empInfo.EmpTypeId;
+            EmpTypled= empInfo.EmpTypled;
             //StationId= empInfo.StationId;
             //Remark= empInfo.Remark;
             IsOn= empInfo.IsOn;

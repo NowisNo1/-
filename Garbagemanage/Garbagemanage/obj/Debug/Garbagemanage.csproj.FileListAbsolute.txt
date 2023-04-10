@@ -2,7 +2,6 @@ E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbage
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.FrmLogin.resources
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.frmMain.resources
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.Properties.Resources.resources
-E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.User.FrmSpecialList.resources
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.User.FrmUserList.resources
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.csproj.GenerateResource.cache
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.csproj.CoreCompileInputs.cache
@@ -28,3 +27,5 @@ E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbage
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.exe
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.pdb
 E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.UControls.UPager.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.User.FrmEmployeeList.resources
+E:\桌面\垃圾分类管理系统\Garbagemanage\Garbagemanage\obj\Debug\Garbagemanage.User.FrmSpecialList.resources

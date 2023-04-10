@@ -12,10 +12,10 @@ using Garbagemanage.DAL.Base;
 
 namespace Garbagemanage.DAL
 {
-    public class SpecialDAL : BaseDAL<SpeInfo>
+    public class SpeDAL : BaseDAL<SpeInfo>
     {
         /// <summary>
-        /// 分页条件查询站点信息
+        /// 分页条件查询人员信息
         /// </summary>
         /// <param name="keywords"></param>
         /// <param name="isDeleted"></param>
@@ -35,7 +35,7 @@ namespace Garbagemanage.DAL
         }
 
         /// <summary>
-        /// 获取所有站点列表（绑定下拉框）
+        /// 获取所有人员列表（绑定下拉框）
         /// </summary>
         /// <returns></returns>
         public List<SpeInfo> GetCboSpeList()
@@ -58,7 +58,7 @@ namespace Garbagemanage.DAL
         }
 
         /// <summary>
-        /// 添加居民，返回居民编号
+        /// 添加人员，返回人员编号
         /// </summary>
         /// <param name="station"></param>
         /// <returns></returns>
@@ -69,7 +69,7 @@ namespace Garbagemanage.DAL
         }
 
         /// <summary>
-        /// 删除/恢复/移除站点信息
+        /// 删除/恢复/移除人员信息
         /// </summary>
         /// <param name="stationIds"></param>
         /// <param name="delType">删除类别 0假删除  1真删除</param>

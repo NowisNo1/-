@@ -72,6 +72,12 @@
     <Compile Include="UControls\UPager.designer.cs">
       <DependentUpon>UPager.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\FrmEmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmEmployeeList.Designer.cs">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\FrmSpecialList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="UControls\UPager.resx">
       <DependentUpon>UPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmEmployeeList.resx">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FrmSpecialList.resx">
       <DependentUpon>FrmSpecialList.cs</DependentUpon>
