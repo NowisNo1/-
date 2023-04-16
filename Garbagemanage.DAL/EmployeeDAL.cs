@@ -30,7 +30,7 @@ namespace Garbagemanage.DAL
             }
             string cols = CreateSql.GetColNames<EmployeeInfo>("");//全部属性名都要查询出来
             SqlParameter para = new SqlParameter("@keywords", $"%{keywords}%");
-            return GetRowsModelList<EmployeeInfo>(strWhere, cols, "Id", "EmpId", startIndex, pageSize, para);
+            return GetRowsModelList<EmployeeInfo>(strWhere, cols, "Id", "EmpId", startIndex, pageSize,"",para);
         }
 
         /// <summary>

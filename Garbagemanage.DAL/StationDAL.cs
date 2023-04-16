@@ -30,7 +30,7 @@ namespace Garbagemanage.DAL
             }
             string cols = CreateSql.GetColNames<StationInfo>("");//全部属性名都要查询出来
             SqlParameter para = new SqlParameter("@keywords", $"%{keywords}%");
-            return GetRowsModelList<StationInfo>(strWhere, cols, "Id", "StationId", startIndex, pageSize, para);
+            return GetRowsModelList<StationInfo>(strWhere, cols, "Id", "StationId", startIndex, pageSize,"", para);
         }
 
         /// <summary>

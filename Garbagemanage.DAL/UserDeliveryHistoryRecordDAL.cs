@@ -32,7 +32,7 @@ namespace Garbagemanage.DAL
             string strWhere = "";
             string cols = CreateSql.GetColNames<UserDeliveryHistoryRecord>("Number");
             List<SqlParameter> listParas = new List<SqlParameter>();
-            return GetRowsModelList<UserDeliveryHistoryRecord>(strWhere, cols, "Number", "PutInTime", startIndex, pageSize, listParas.ToArray());
+            return GetRowsModelList<UserDeliveryHistoryRecord>(strWhere, cols, "Number", "PutInTime", startIndex, pageSize, "", listParas.ToArray());
         }
     }
 }
