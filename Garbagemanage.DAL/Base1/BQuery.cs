@@ -201,10 +201,10 @@ namespace Garbagemanage.DAL.Base
         /// <param name="pageSize"></param>
         /// <param name="paras"></param>
         /// <returns></returns>
-        public PageModel<S> GetRowsModelList<S>(string strWhere, string cols, string rowName, string orderbyCol, int startIndex, int pageSize, params SqlParameter[] paras)
+        public PageModel<S> GetRowsModelList<S>(string strWhere, string cols, string rowName, string orderbyCol, int startIndex, int pageSize, string order = "" , params SqlParameter[] paras)
         {
             //生成带行号结果集的Sql
-            string sql = CreateSql.CreateRowSelectSql<T>(cols, strWhere, rowName, orderbyCol);
+            string sql = CreateSql.CreateRowSelectSql<T>(cols, strWhere, rowName, orderbyCol, order);
             //生成查询分页的sql(两部分，1.获取总记录数  2 获取当页列表)
             string sqlNew = $"select count(1) from ({sql}) as temp;select * from  ({sql}) as temp where   {rowName} between {startIndex} and {startIndex + pageSize - 1} ";
             DataSet ds = GetDs(sqlNew, 1, paras);

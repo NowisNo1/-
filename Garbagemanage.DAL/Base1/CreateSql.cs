@@ -148,7 +148,7 @@ namespace Garbagemanage.DAL.Base
         /// <param name="rowName"></param>
         /// <param name="orderbyCol"></param>
         /// <returns></returns>
-        public static string CreateRowSelectSql<T>(string cols, string strWhere, string rowName, string orderbyCol)
+        public static string CreateRowSelectSql<T>(string cols, string strWhere, string rowName, string orderbyCol, string order = "")
         {
             string sql = "";
             Type type = typeof(T);
@@ -158,7 +158,7 @@ namespace Garbagemanage.DAL.Base
                 var properties = PropertyHelper.GetProperties<T>("");
                 cols = string.Join(",", properties.Select(p => p.GetColName()));
             }
-            sql = $"select row_number() over (order by {orderbyCol} ) as {rowName}, {cols} from {tableName} where 1=1 ";
+            sql = $"select row_number() over (order by {orderbyCol}  {order}) as {rowName}, {cols} from {tableName} where 1=1 ";
             if (!string.IsNullOrEmpty(strWhere))
                 sql += " and " + strWhere;
             return sql;

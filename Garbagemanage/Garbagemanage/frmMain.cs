@@ -29,11 +29,15 @@ namespace Garbagemanage
 
 
             PutInfosBLL putInfosBLL = new PutInfosBLL();
-            //Console.WriteLine(">>>>>>>>>>>");
-            //foreach (var item in putInfosBLL.getRecordListByDay(""))
-            //{
-            //    Console.WriteLine(item);
-            //}
+            Console.WriteLine(">>>>>>>>>>>");
+            foreach (var item in putInfosBLL.test(1, 10))
+            {
+                Console.WriteLine(item.PutName);
+            }
+            foreach (var item in putInfosBLL.getRecordListByDay(""))
+            {
+                Console.WriteLine(item.KitchenWaste);
+            }
         }
         private void initMainPageInfo()
         {   /**
