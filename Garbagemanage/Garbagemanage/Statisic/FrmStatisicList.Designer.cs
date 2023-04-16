@@ -3,7 +3,9 @@
 
 using CefSharp;
 using CefSharp.WinForms;
+using Garbagemanage.BLL;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Garbagemanage.Statisic
@@ -80,6 +82,45 @@ namespace Garbagemanage.Statisic
             {
                 this.f = f;
                 this.chromeBrowser = chromeBrowser;
+            }
+
+            public string demo()
+            {
+                JObject json = new JObject();
+                PutInfosBLL putInfosBLL = new PutInfosBLL();
+           
+                JObject resp = new JObject();
+                JArray l = new JArray();
+                List<string> list = new List<string>();
+                JArray PutTime = new JArray();
+                JArray RecyclableWaste = new JArray();
+                JArray OtherWaste = new JArray();
+                JArray HarmfulWaste = new JArray();
+                JArray KitchenWaste = new JArray();
+                JArray AllWeight = new JArray();
+                foreach (var item in putInfosBLL.getRecordListByDay(""))
+                {
+                    PutTime.Add(item.PutTime);
+                    RecyclableWaste.Add(item.RecyclableWaste);
+                    OtherWaste.Add(item.OtherWaste);
+                    HarmfulWaste.Add(item.HarmfulWaste);
+                    KitchenWaste.Add(item.KitchenWaste);
+                    AllWeight.Add(item.AllWeight);
+ 
+                    string s = item.PutTime.ToString();
+                    string[] arr = s.Split(' ')[0].Split('/');
+                    l.Add(arr[1] + "/" + arr[2]);
+                }
+                System.Console.WriteLine(l.ToString());
+                resp["xAxis"] = l.ToString();
+                resp["KitchenWaste"] = KitchenWaste.ToString();
+                resp["RecyclableWaste"] = RecyclableWaste.ToString();
+                resp["OtherWaste"] = OtherWaste.ToString();
+                resp["HarmfulWaste"] = HarmfulWaste.ToString();
+                resp["AllWeight"] = AllWeight.ToString();
+
+
+                return resp.ToString();
             }
             public string test()
             {
