@@ -3,3 +3,5 @@
 */.vs/*
 /Garbagemanage/Garbagemanage/obj/*
 */obj/*
+.dll
+.xml
