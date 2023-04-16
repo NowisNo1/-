@@ -1,6 +1,9 @@
 /Garbagemanage/packages/*
-/Garbagemanage/Garbagemanage/bin/*
+*.dll
+*.xml
+*.pak
 */bin/*
 */.vs/*
 /Garbagemanage/Garbagemanage/obj/*
 */obj/*
+.vs
