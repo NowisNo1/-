@@ -38,7 +38,14 @@ namespace Garbagemanage.Models
         public float AllWeight { get; set; }
         public override string ToString()
         {
-            return PutType + " " + AllWeight;
+            return KitchenWaste + " " + AllWeight;
         }
+        public string KitchenWaste { get; set; }
+
+        public string OtherWaste { get; set; }
+
+        public string RecyclableWaste { get; set; }
+
+        public string HarmfulWaste { get; set; }
     }
 }
