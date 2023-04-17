@@ -131,6 +131,12 @@
     <Compile Include="Statisic\FrmStatisicList.Designer.cs">
       <DependentUpon>FrmStatisicList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stat\FrmExpCountStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stat\FrmExpCountStatistics.Designer.cs">
+      <DependentUpon>FrmExpCountStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UControls\UPager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,7 +218,6 @@
   <ItemGroup>
     <Folder Include="Employee\" />
     <Folder Include="imgs\" />
-    <Folder Include="Stat\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">

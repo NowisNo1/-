@@ -65,3 +65,13 @@
 [0416/214146.542:INFO:CONSOLE(62792)] "有害垃圾 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
 [0416/214146.546:INFO:CONSOLE(62792)] "总重 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
 [0416/214146.546:INFO:CONSOLE(62792)] "其他垃圾 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
+[0416/214709.346:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0416/225248.364:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0416/225248.397:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081009.953:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081010.038:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081010.056:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081014.107:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081014.145:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081242.490:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081242.491:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
