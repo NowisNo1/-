@@ -11,7 +11,20 @@
 
 <body>
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
-    <div class="test" id="main"></div>
+    <select  id="sid">
+        <option>---请选择---</option>
+        <option>湖南</option>
+        <option>湖北</option>
+        <option>浙江</option>
+        <option>广东</option>
+    </select>
+    <select  id="ssid">
+            <option>---请选择---</option>
+    </select>
+    <div class="test" id="main">
+        
+    </div>
+    
     <script type="text/javascript">
         var json = JSON.parse(MessageWrapper.demo())         
 
