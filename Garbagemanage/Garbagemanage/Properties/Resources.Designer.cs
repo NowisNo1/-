@@ -61,6 +61,24 @@ namespace Garbagemanage.Properties {
         }
         
         /// <summary>
+        ///   查找类似 ../../Properties/results.txt 的本地化字符串。
+        /// </summary>
+        internal static string results_path {
+            get {
+                return ResourceManager.GetString("results_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ../../Properties/results1.txt 的本地化字符串。
+        /// </summary>
+        internal static string results1_path {
+            get {
+                return ResourceManager.GetString("results1_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap 上框 {

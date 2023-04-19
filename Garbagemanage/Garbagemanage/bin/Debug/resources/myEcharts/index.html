@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+    <script src="JSON.js"></script>
+</head>
+
+<body>
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+    <div class="content">
+        <select  id="year">
+            <option>---请选择年份---</option>
+            
+        </select>
+        <select id="month">
+            <option>---请选择月份---</option>
+            <option value="1">1月</option>
+            <option value="2">2月</option>
+            <option value="3">3月</option>
+            <option value="4">4月</option>
+            <option value="5">5月</option>
+            <option value="6">6月</option>
+            <option value="7">7月</option>
+            <option value="8">8月</option>
+            <option value="9">9月</option>
+            <option value="10">10月</option>
+            <option value="11">11月</option>
+            <option value="12">12月</option>
+        </select>
+        <button class="btn">查询</button>
+        <div class="table">
+            <div id="plot">
+            
+            </div>
+            <div id="pie">
+                
+            </div>
+            
+        </div>
+    </div> 
+    <div id="no-content"> 
+        <h1>没有数据</h1>
+    </div>
+    
+    
+    <script type="text/javascript">
+        let valid_years = JSON.parse(MessageWrapper.get_valid_years())["resp"]
+        let json = JSON.parse(MessageWrapper.get_years_data(valid_years[0], "1")) 
+        let btn = document.querySelector('.btn')
+        let myChart_pie = null;
+        let myChart_plot = null;
+        const sum = (arr) => {
+            let s = 0;
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] -= '0'
+                s += arr[i];
+            }
+            return s;
+        }
+        btn.onclick = function () {
+            const year = document.getElementById("year").value;
+            const month = document.getElementById("month").value;
+            json = JSON.parse(MessageWrapper.get_years_data(year, month))
+            if(JSON.stringify(json) == "{}"){
+                document.getElementById("no-content").style.display="block"
+            }else{
+                load_charts()
+                load_data()
+                document.getElementById("no-content").style.display="none"
+            }
+            
+        }
+        const get_select_field = () =>{
+            let select_year = document.getElementById("year");
+            
+            for(var i = 0; i < valid_years.length; i++){
+                let option = document.createElement("option");
+                select_year.options.add(option);
+                option.innerText = valid_years[i];
+                option.value = valid_years[i]; 
+            }
+        }
+        get_select_field()
+        if(JSON.stringify(json) == "{}"){
+            document.getElementById("no-content").style.display="block"
+        }else{
+            load_charts()
+            load_data()
+        }
+        const load_data = () =>{
+                let KitchenWaste = JSON.parse(json["KitchenWaste"])
+                let RecyclableWaste = JSON.parse(json["RecyclableWaste"])
+                let HarmfulWaste = JSON.parse(json["HarmfulWaste"])
+                let AllWeight = JSON.parse(json["AllWeight"])
+                let OtherWaste = JSON.parse(json["OtherWaste"])
+                let percent = ["占比"]
+                let tot = ["总量"]
+                let totAllWeight = sum(AllWeight)
+
+                percent.push((sum(KitchenWaste) / totAllWeight * 100).toFixed(2))
+                percent.push((sum(RecyclableWaste) / totAllWeight * 100).toFixed(2))
+                percent.push((sum(HarmfulWaste) / totAllWeight * 100).toFixed(2))
+                percent.push((sum(OtherWaste) / totAllWeight * 100).toFixed(2))
+                
+                tot.push(sum(KitchenWaste).toFixed(2))
+                tot.push(sum(RecyclableWaste).toFixed(2))
+                tot.push(sum(HarmfulWaste).toFixed(2))
+                tot.push(sum(OtherWaste).toFixed(2))
+                const option_pie = {
+                    title: {
+                        left: 'center',
+                        text: '四类垃圾单月分布图',
+                        textStyle: {
+                            color: '#6d6',
+                            fontSize: 15,
+                        }
+                    },
+                    legend: {
+                        left: 'right',
+                        top: '10',
+                        orient: 'vertical',
+                    },
+                    dataset: {
+                        source: [
+                            ['quarter', '厨余垃圾', '可回收垃圾', '有害垃圾', '其他垃圾'],
+                            percent,
+                            tot,
+                        ]
+                        
+                    },
+                    tooltip: {
+                        show: true,
+                        trigger: 'item',
+                        formatter: (dataset) => {
+                            let data = dataset['data']
+                            
+                            return("占比：" + data[1] + "%"
+                            +"</br>总量： " + data[2] + "kg")
+                        }
+                    },
+                    series: [
+                        {
+                            name: '站点',
+                            type: 'pie',
+                            seriesLayoutBy: 'row',
+                            label: {
+                                show: true
+                            },
+                        },
+                    
+                    ]
+                };
+
+                // 指定图表的配置项和数据
+                const option_plot = {
+                    title: {
+                        left: 'center',
+                        text: '四类垃圾及总重量单月折线统计图',
+                        textStyle: {
+                            fontWeight: 'normal',              //标题颜色
+                            color: '#408829',
+                            fontSize: 15,
+                        },
+                    },
+                    legend: {
+                        left: 'right',
+                        orient: 'vertical',
+                        data: ['厨余垃圾', '可回收垃圾', '有害垃圾', '总重', '其他垃圾']
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: JSON.parse(json["xAxis"]),
+                        axisLabel:{
+                                textStyle:{
+                                fontSize: 15,
+                                color: 'black'
+                            }
+                        },
+                        // splitArea:{
+                        //     areaStyle:{
+                        //         color: ['rgba(250,250,250,0.3)','rgba(200,200,200,0.3)']
+                        //     } 
+                        // }
+                    },
+                    yAxis: {
+                        axisLabel:{
+                                textStyle:{//这是设置x轴或y轴的字体
+                                fontSize: 15,
+                                color: 'black'
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: '厨余垃圾',
+                            data: KitchenWaste,
+                            type: 'line',
+                            stack: '厨余垃圾',
+                            
+                        },
+                        {
+                            name: '可回收垃圾',
+                            data: RecyclableWaste,
+                            type: 'line',
+                            stack: '可回收垃圾',
+                        },
+                        {
+                            name: '有害垃圾',
+                            data: HarmfulWaste,
+                            type: 'line',
+                            stack: '有害垃圾',
+                            //areaStyle:{}
+                        },
+                        {
+                            name: '总重',
+                            data: AllWeight,
+                            type: 'line',
+                            stack: '总重',
+                            itemStyle:{
+                                color: '#4eee29',   
+                                normal:{
+                                    lineStyle:{
+                                        width: 5,
+                                        type: 'dotted'  //'dotted'虚线 'solid'实线
+                                    }
+                                }
+                            },
+                            //areaStyle:{}
+                        },
+                        {
+                            name: '其他垃圾',
+                            data: OtherWaste,
+                            type: 'line',
+                            stack: '其他垃圾',
+                        }
+                    ]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart_plot.setOption(option_plot);
+                myChart_pie.setOption(option_pie);
+            }
+        const load_charts = () => {
+                myChart_pie = null;
+                myChart_plot = null;
+                myChart_pie = echarts.init(document.getElementById('pie'), null, {
+                    width: window.innerWidth * 0.95 * 0.5,
+                    height: window.innerHeight * 0.92
+                });
+                myChart_plot = echarts.init(document.getElementById('plot'), null, {
+                    width: window.innerWidth * 0.95 * 0.5,
+                    height: window.innerHeight * 0.92
+                });
+                window.addEventListener('resize', function() {
+                    myChart_pie.resize({
+                        width: window.innerWidth * 0.95 * 0.5,
+                        height: window.innerHeight * 0.92
+                    });
+                    myChart_plot.resize({
+                        width: window.innerWidth * 0.95 * 0.5,
+                        height: window.innerHeight * 0.92
+                    });
+                });
+            }
+    </script>
+    <style>
+        html {
+            border:0px; 
+            height: 100%;
+        }
+        body{
+            height: 92%;
+        }
+        .content{
+            background-color: RGB(255, 255, 255, 0);
+        }
+        .table{
+            display: flex;
+            flex-direction: row;
+        }
+        #no-content{
+            display: none; 
+            padding-top: 100px;
+            height: 50%;
+             /* background: url(../static/大屏背景.png) 100px 0px repeat; */
+        }
+        h1{
+            text-align:center;
+        }
+
+        
+    </style>
+</body>
+</html>

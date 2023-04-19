@@ -28,23 +28,19 @@ namespace Garbagemanage
             initMainPageInfo();
 
 
-            PutInfosBLL putInfosBLL = new PutInfosBLL();
-            Console.WriteLine(">>>>>>>>>>>");
-            foreach (var item in putInfosBLL.test(1, 10))
-            {
-                Console.WriteLine(item.PutName);
-            }
-            foreach (var item in putInfosBLL.getRecordListByDay(""))
-            {
-                Console.WriteLine(item.KitchenWaste);
-            }
+            //PutInfosBLL putInfosBLL = new PutInfosBLL();
+            //Console.WriteLine(">>>>>>>>>>>");
+            //foreach (var item in putInfosBLL.test(1, 10))
+            //{
+            //    Console.WriteLine(item.PutName);
+            //}
+            //foreach (var item in putInfosBLL.getRecordListByDay("2023", "12"))
+            //{
+            //    Console.WriteLine(item.KitchenWaste);
+            //}
         }
         private void initMainPageInfo()
-        {   /**
-             * @author Luo
-             * @createTime 2023-04-10
-             * @comment 带关闭按钮的 tabControl
-             */
+        {   
             //tabPages.DrawMode = TabDrawMode.OwnerDrawFixed;
             //加载登录信息
             if (this.Tag !=null)
@@ -148,7 +144,7 @@ namespace Garbagemanage
                 if (form == null)
                 {
                     //创建窗体
-                    string spaceName = this.GetType().Namespace;//命名空间名
+                    string spaceName = GetType().Namespace;//命名空间名
                     string fullName = spaceName + "." + url;//完整名称
                     Type type = Type.GetType(fullName);//窗体的Type对象
                     form = (Form)Activator.CreateInstance(type);//窗体对象
@@ -192,13 +188,13 @@ namespace Garbagemanage
         /// <param name="e"></param>
         private void frmMain_SizeChanged(object sender, EventArgs e)
         {
-            if(tabPages.TabPages.Count>0)
+            if (tabPages.TabPages.Count > 0)
             {
-                Size size = tabPages.SelectedTab.Size;//子页的尺寸
-                foreach(TabPage tabPage in tabPages.TabPages)
+                Size size = tabPages.SelectedTab.Size;//子页的尺寸          
+                foreach (TabPage tabPage in tabPages.TabPages)
                 {
                     Control c = tabPage.Controls[0];
-                    if(c is Form)
+                    if (c is Form)
                     {
                         Form form = (Form)c;
                         form.WindowState = FormWindowState.Normal;

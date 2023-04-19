@@ -101,7 +101,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Delivery_show";
-            this.Text = "Delivery_show";
+            this.Text = "投放信息显示";
             this.Load += new System.EventHandler(this.Delivery_show_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBoxExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxExit)).EndInit();

@@ -10,3 +10,4 @@ Garbagemanage/packages/*
 .vs
 *.nupkg
 *.pdb
+Garbagemanage/SCWM_Setup/*

@@ -12,6 +12,10 @@ namespace Garbagemanage.BLL
     {
         PutInfosDAL putInfosDAL = new PutInfosDAL();
 
+        public List<int> getValidYears()
+        {
+            return putInfosDAL.getValidYears();
+        }
         public int GetRecordCount()
         {
             return putInfosDAL.GetRecordCount();
@@ -28,9 +32,9 @@ namespace Garbagemanage.BLL
             return putInfosDAL.FindRecordList(idx, pageSize).PageList;
         }
 
-        public List<PutInfos> getRecordListByDay(string date)
+        public List<PutInfos> getRecordListByDay(string year, string month)
         {
-            return putInfosDAL.getRecordListByDay(date);
+            return putInfosDAL.getRecordListByDay(year, month);
         }
     }
 }

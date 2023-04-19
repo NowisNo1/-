@@ -30,8 +30,19 @@ namespace Garbagemanage.DAL
             List<SqlParameter> listParas = new List<SqlParameter>();
             return GetRowsModelList<PutInfos>(strWhere, cols, "PutId", "PutTime", startIndex, pageSize,"desc", listParas.ToArray());
         }
-
-        public List<PutInfos> getRecordListByDay(string date)
+        public List<int> getValidYears()
+        {
+            string cols = "PutId";
+            string sql = "select datepart(year, PutTime) as PutId from PutInfos group by datepart(year, PutTime)";
+            SqlDataReader dr = SqlHelper.ExecuteReader(sql, 1, null);
+            //转换  List<T>
+            List<PutInfos> res = DbConvert.DataReaderToList<PutInfos>(dr, cols, "");
+            List<int> resp = new List<int>();
+            // 年数查询限制 TODO
+            res.ForEach(item => resp.Add(item.PutId));
+            return resp;
+        } 
+        public List<PutInfos> getRecordListByDay(string year, string month)
         {
             string cols = "PutTime,KitchenWaste,OtherWaste,RecyclableWaste,HarmfulWaste,AllWeight";
             string sql = "select PutTime, SUM(type1) 'KitchenWaste' , SUM(type2) 'OtherWaste', SUM(type3) 'RecyclableWaste', SUM(type4) 'HarmfulWaste', SUM(PutWeight) 'AllWeight' from ( "+
@@ -43,7 +54,7 @@ namespace Garbagemanage.DAL
                        " from"+
                        "("+
                         "select left(convert(varchar, PutTime, 120), 10) PutTime, PutType, PutWeight from [User].[dbo].[PutInfos]"+
-                        "where datepart(year, PutTime) = 2022 and datepart(month, PutTime) = 1 and IsDeleted = 0"+
+                        "where datepart(year, PutTime) = " + year + " and datepart(month, PutTime) = " + month + " and IsDeleted = 0"+
                        ") as PutInfos group by PutTime, PutType"+
                        ") as PutInfos group by PutTime order by PutTime";
             SqlDataReader dr = SqlHelper.ExecuteReader(sql, 1, null);

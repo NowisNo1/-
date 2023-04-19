@@ -1,9 +1,8 @@
 ﻿
-
-
 using CefSharp;
 using CefSharp.WinForms;
 using Garbagemanage.BLL;
+using Garbagemanage.Models;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -49,13 +48,14 @@ namespace Garbagemanage.Statisic
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
             this.chromiumWebBrowser1.Size = new System.Drawing.Size(1508, 726);
             this.chromiumWebBrowser1.TabIndex = 0;
+            
             // 
             // FrmStatisicList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1508, 726);
-            this.Controls.Add(this.chromiumWebBrowser1);
+            //this.ClientSize = new System.Drawing.Size(1508, 726);
+            this.Controls.Add(chromiumWebBrowser1);
             this.Name = "FrmStatisicList";
             this.Text = "信息统计";
             this.Load += new System.EventHandler(this.FrmStatisicList_Load);
@@ -68,9 +68,10 @@ namespace Garbagemanage.Statisic
             this.chromiumWebBrowser1.ActivateBrowserOnCreation = false;
             this.chromiumWebBrowser1.Location = new System.Drawing.Point(0, 0);
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(800, 450);
+            this.chromiumWebBrowser1.Size = new System.Drawing.Size(1508, 726);
             this.chromiumWebBrowser1.TabIndex = 0;
             chromiumWebBrowser1.Dock = DockStyle.Fill;
+            
             chromiumWebBrowser1.JavascriptObjectRepository.Settings.LegacyBindingEnabled = true;
             chromiumWebBrowser1.JavascriptObjectRepository.Register("MessageWrapper", new MessageWrapper(chromiumWebBrowser1, this), isAsync: false, options: BindingOptions.DefaultBinder);
 
@@ -84,12 +85,29 @@ namespace Garbagemanage.Statisic
                 this.f = f;
                 this.chromeBrowser = chromeBrowser;
             }
-
-            public string demo()
+            public string get_valid_years()
             {
                 JObject json = new JObject();
+                JArray years = new JArray();
                 PutInfosBLL putInfosBLL = new PutInfosBLL();
-           
+                List<int> res = putInfosBLL.getValidYears();
+                res.ForEach(item =>
+                {
+                    years.Add(item);
+                });
+                json["error_message"] = "success";
+                json["resp"] = years;
+                return json.ToString();
+            }
+            public string get_years_data(string year, string month)
+            {
+                PutInfosBLL putInfosBLL = new PutInfosBLL();
+                JObject json = new JObject();
+                List<PutInfos> res = putInfosBLL.getRecordListByDay(year, month);
+                if(res.Count == 0)
+                {
+                    return json.ToString();
+                }
                 JObject resp = new JObject();
                 JArray l = new JArray();
                 List<string> list = new List<string>();
@@ -99,7 +117,7 @@ namespace Garbagemanage.Statisic
                 JArray HarmfulWaste = new JArray();
                 JArray KitchenWaste = new JArray();
                 JArray AllWeight = new JArray();
-                foreach (var item in putInfosBLL.getRecordListByDay(""))
+                foreach (var item in res)
                 {
                     PutTime.Add(item.PutTime);
                     RecyclableWaste.Add(item.RecyclableWaste);
@@ -123,6 +141,7 @@ namespace Garbagemanage.Statisic
 
                 return resp.ToString();
             }
+           
             public string test()
             {
                 JObject json = new JObject();

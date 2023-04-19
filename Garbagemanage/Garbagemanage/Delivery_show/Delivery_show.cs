@@ -13,7 +13,7 @@ namespace Garbagemanage.Delivery_show
 {
     public partial class Delivery_show : Form
     {
-        // SqlConnection myCon = new SqlConnection("Data Source=49.233.5.44;Initial Catalog=personInfo;Integrated Security=false;Pooling=False;uid=sa;password=BJUTbjut1234;database=CGQDataCenter");
+       
         int cycleIndex = 0;
         //private Plc myPLC = null;
 
@@ -45,12 +45,6 @@ namespace Garbagemanage.Delivery_show
         private void Delivery_show_Resize(object sender, EventArgs e)
         {
             //控件随着窗体改变大小
-            //float newx = this.Width / cc.x;
-            //float newy = this.Height / cc.y;
-            //cc.setControls(newx, newy, this);
-            ////让控件在父控件中居中
-            //cc.CenterCtr(panel2, true, true);
-            Console.WriteLine(e);
         }
         private void PBoxExit_Click(object sender, EventArgs e)
         {
