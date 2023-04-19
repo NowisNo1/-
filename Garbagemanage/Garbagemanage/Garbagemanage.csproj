@@ -294,8 +294,10 @@
   <ItemGroup>
     <Folder Include="Employee\" />
     <Folder Include="imgs\" />
+
     <Folder Include="Resources\" />
     <Folder Include="Stat\" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">

@@ -11,3 +11,7 @@ Garbagemanage/packages/*
 *.nupkg
 *.pdb
 Garbagemanage/SCWM_Setup/*
+Garbagemanage/Garbagemanage/bin/Debug/DawnCache/*
+*.log
+*.exe
+ Garbagemanage/Garbagemanage/bin/Debug/GPUCache/*

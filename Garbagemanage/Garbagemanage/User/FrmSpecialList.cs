@@ -107,7 +107,26 @@ namespace Garbagemanage.User
             string sex = txtSex.Text.Trim();
             string age = txtAge.Text.Trim();
             string speidnumber = txtSpeIDnumber.Text.Trim();
-            DateTime newtime = Convert.ToDateTime(txtNewTime.Text.Trim());
+            DateTime newtime = new DateTime();
+            // 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 
+            try
+            {
+                newtime = Convert.ToDateTime(txtNewTime.Text.Trim());
+                if (newtime.Year < 1753 || (newtime.Year == 1753 && newtime.Hour < 12) || newtime.Year > 9999)
+                {
+                    lblerr.SetErrorMsg("请输入正确的时间范围！");
+                    txtSpeNumber.Focus();
+                    return;
+                }
+            } 
+            catch 
+            {
+                lblerr.SetErrorMsg("请输入正确的时间格式！");
+                txtSpeNumber.Focus();
+                return;
+            }
+            
+
             string remark = txtmiaoshu.Text.Trim();
             //信息检查
             if (string.IsNullOrEmpty(speNo))
@@ -170,7 +189,7 @@ namespace Garbagemanage.User
                 txtNewTime.Focus();
                 return;
             }
-            
+
             //封装信息
             SpeInfo spe = new SpeInfo()
             {
@@ -183,7 +202,8 @@ namespace Garbagemanage.User
                 Age = age,
                 SpeVillage = speVillage,
                 NewThrow = newtime,
-                SpeIDnumber=speidnumber
+                SpeIDnumber = speidnumber,
+                IsDeleted = 0
             };
             //提交处理
             if (actType == 1)
