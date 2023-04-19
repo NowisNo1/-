@@ -52,5 +52,6 @@ namespace Garbagemanage.Models
         /// </summary>
         public bool IsRunning { get; set; }
    
+        public int IsDeleted { get; set; }
     }
 }

@@ -65,6 +65,18 @@
 [0416/214146.542:INFO:CONSOLE(62792)] "鏈夊鍨冨溇 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
 [0416/214146.546:INFO:CONSOLE(62792)] "鎬婚噸 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
 [0416/214146.546:INFO:CONSOLE(62792)] "鍏朵粬鍨冨溇 series not exists. Legend data should be same with series name or data name.", source: file:///D:/%E5%A4%A7%E5%AD%A6/%E5%9E%83%E5%9C%BE%E6%B8%85%E8%BF%90/Garbagemanage/Garbagemanage/bin/Debug/myEcharts/echarts.js (62792)
+<<<<<<< HEAD
+[0416/214709.346:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0416/225248.364:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0416/225248.397:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081009.953:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081010.038:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081010.056:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081014.107:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081014.145:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081242.490:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0417/081242.491:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+=======
 [0416/214511.007:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/181045.303:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/181045.341:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
@@ -78,6 +90,9 @@
 [0417/182609.800:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0417/182609.809:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0417/183354.322:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+<<<<<<< HEAD
+>>>>>>> 0c8d48a9e1f54eccd4b8fac28d557f8328598b93
+=======
 [0417/193342.551:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/195054.439:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/201106.124:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
@@ -92,3 +107,9 @@
 [0417/202351.302:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/202428.201:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
 [0417/202522.029:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+>>>>>>> 8e07cc9a299ef801045bd1af7cc9b18ecc62e8ea
+[0419/132720.101:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/132720.245:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\14989\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: 系统找不到指定的路径。 (0x3)
+[0419/141220.674:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/141539.239:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/142756.337:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
