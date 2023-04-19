@@ -44,16 +44,17 @@ namespace Garbagemanage.Statisic
             // chromiumWebBrowser1
             // 
             this.chromiumWebBrowser1.ActivateBrowserOnCreation = false;
+            this.chromiumWebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chromiumWebBrowser1.Location = new System.Drawing.Point(0, 0);
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(805, 450);
+            this.chromiumWebBrowser1.Size = new System.Drawing.Size(1508, 726);
             this.chromiumWebBrowser1.TabIndex = 0;
             // 
             // FrmStatisicList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1508, 726);
             this.Controls.Add(this.chromiumWebBrowser1);
             this.Name = "FrmStatisicList";
             this.Text = "信息统计";

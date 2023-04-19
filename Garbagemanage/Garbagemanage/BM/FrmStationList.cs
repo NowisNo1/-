@@ -260,7 +260,8 @@ namespace Garbagemanage.BM
                 Phone = phone,
                 ApplyTime = applytime,
                 IsRunning = isRunning,
-                Remark = remark
+                Remark = remark,
+                IsDeleted = 0
             };
             //提交处理
             if (actType == 1)

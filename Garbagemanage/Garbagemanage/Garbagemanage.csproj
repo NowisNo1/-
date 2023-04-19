@@ -177,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Statisic\FrmStatisicList.resx">
       <DependentUpon>FrmStatisicList.cs</DependentUpon>
@@ -212,6 +213,10 @@
   <ItemGroup>
     <Folder Include="Employee\" />
     <Folder Include="imgs\" />
+
+    <Folder Include="Resources\" />
+    <Folder Include="Stat\" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">

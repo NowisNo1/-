@@ -60,5 +60,6 @@ namespace Garbagemanage.Models
         /// </summary>
         public string Remark { get; set; }
        
+        public int IsDeleted { get; set; }
     }
 }

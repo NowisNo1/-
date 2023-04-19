@@ -90,4 +90,26 @@
 [0417/182609.800:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0417/182609.809:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0417/183354.322:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+<<<<<<< HEAD
 >>>>>>> 0c8d48a9e1f54eccd4b8fac28d557f8328598b93
+=======
+[0417/193342.551:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/195054.439:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/201106.124:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/201156.005:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/201410.890:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/201629.258:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/201949.288:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202024.177:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202053.521:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202225.875:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202322.469:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202351.302:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202428.201:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0417/202522.029:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+>>>>>>> 8e07cc9a299ef801045bd1af7cc9b18ecc62e8ea
+[0419/132720.101:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/132720.245:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\14989\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: 系统找不到指定的路径。 (0x3)
+[0419/141220.674:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/141539.239:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
+[0419/142756.337:WARNING:chrome_browser_cloud_management_controller.cc(87)] Could not create policy manager as CBCM is not enabled.
