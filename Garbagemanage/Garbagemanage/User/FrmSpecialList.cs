@@ -19,6 +19,8 @@ namespace Garbagemanage.User
         public FrmSpecialList()
         {
             InitializeComponent();
+            uPager1.instance = this;
+            uPager1.type = "FrmSpecialList";
         }
         SpeBLL speBLL = new SpeBLL();
         int actType = 1;//信息提交状态  1-新增 2-修改
@@ -32,7 +34,7 @@ namespace Garbagemanage.User
             //this.dgvSpeList.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvSpeList_CurrentCellDirtyStateChanged);
             this.dgvSpeList.CurrentCellDirtyStateChanged += new System.EventHandler(FormUtility.DgvList_CurrentCellDirtyStateChanged);
             //加载站点列表
-            FindSpeList();
+            //FindSpeList();
 
             //初始化信息栏
             InitSpeInfo();
@@ -46,8 +48,20 @@ namespace Garbagemanage.User
         {
             FindSpeList();
         }
+        delegate string Delegate();
 
-        private void FindSpeList()
+        public void FunStartmain()
+        {
+
+            Delegate funDelegate = new Delegate(FindSpeList);
+
+            IAsyncResult aResult = BeginInvoke(funDelegate);
+
+            aResult.AsyncWaitHandle.WaitOne(10);
+
+            string str = (string)EndInvoke(aResult);
+        }
+        private string FindSpeList()
         {
             string keywords = textBox6.Text.Trim();
             bool showDel = chkShowDel.Checked;
@@ -71,6 +85,8 @@ namespace Garbagemanage.User
                 uPager1.Enabled = false;
             }
             SetActBtnsAndColVisible(showDel);
+
+            return "ret";
         }
         private void uPager1_PageChanged(object sender, EventArgs e)
         {
@@ -203,6 +219,7 @@ namespace Garbagemanage.User
                 SpeVillage = speVillage,
                 NewThrow = newtime,
                 SpeIDnumber = speidnumber,
+                Remark = remark,
                 IsDeleted = 0
             };
             //提交处理

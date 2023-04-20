@@ -20,6 +20,8 @@ namespace Garbagemanage.BM
         public FrmStationList()
         {
             InitializeComponent();
+            uPager1.instance = this;
+            uPager1.type = "FrmStationList";
         }
 
         StationBLL stationBLL = new StationBLL();
@@ -30,19 +32,35 @@ namespace Garbagemanage.BM
         string oldNo = "", oldName = "";//修改前名称和编码
         private void FrmStationList_Load(object sender, EventArgs e)
         {
+            
             //this.dgvStationList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvList_CellContentClick_1);
             this.dgvStationList.CurrentCellDirtyStateChanged += new System.EventHandler(FormUtility.DgvList_CurrentCellDirtyStateChanged);
-            //加载站点列表
-            FindStationList();
             //初始化信息栏
             InitStationInfo();
+            //加载站点列表
+            //FindStationList();
+            
         }
-        private void FindStationList()
+
+        delegate string Delegate();
+
+        public void FunStartmain()
+        {
+
+            Delegate funDelegate = new Delegate(FindStationList);
+
+            IAsyncResult aResult = BeginInvoke(funDelegate);
+
+            aResult.AsyncWaitHandle.WaitOne(10);
+
+            string str = (string)EndInvoke(aResult);
+        }
+        private string  FindStationList()
         {
             string keywords = textBox6.Text.Trim();
             bool showDel = chkShowDel.Checked;
-            int startIndex = uPager1.StartIndex;//当页的开始索引
-            int pageSize = uPager1.PageSize;//每页记录数
+            int startIndex = uPager1.StartIndex;    //当页的开始索引
+            int pageSize = uPager1.PageSize;        //每页记录数
             dgvStationList.AutoGenerateColumns = false;
             PageModel<StationInfo> pageModel = stationBLL.FindStationList(keywords, showDel, startIndex, pageSize);
             if (pageModel.TotalCount > 0)
@@ -61,6 +79,8 @@ namespace Garbagemanage.BM
                 uPager1.Enabled = false;
             }
             SetActBtnsAndColVisible(showDel);
+
+            return "ret";
         }
         /// <summary>
         /// 查询
@@ -115,7 +135,7 @@ namespace Garbagemanage.BM
                 txtManager.Text = stationInfo.Manager;
                 txtPhone.Text = stationInfo.Phone;
                 txtTime.Text = stationInfo.ApplyTime;
-                txtmiaoshu.Text = stationInfo.Remark;
+                txtmiaoshu.Text = stationInfo.Remark;//站点描述
                 chkState.Checked = stationInfo.IsRunning;
                 editStationId = stationInfo.StationId;
                 oldName = stationInfo.StationName;

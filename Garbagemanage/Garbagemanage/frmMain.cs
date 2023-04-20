@@ -148,7 +148,7 @@ namespace Garbagemanage
                     string fullName = spaceName + "." + url;//完整名称
                     Type type = Type.GetType(fullName);//窗体的Type对象
                     form = (Form)Activator.CreateInstance(type);//窗体对象
-         
+                    
                 }
                 //Form对象添加到TabControl中
                 tabPages.AddTabFormPage(form);
