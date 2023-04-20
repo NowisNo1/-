@@ -10,6 +10,13 @@ using System.Windows.Forms;
 using Garbagemanage.Utility;
 using Garbagemanage.BLL;
 using Garbagemanage.Models;
+using System.Threading;
+using Websocket.Client;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using WebSocket4Net;
+using System.IO;
+using System.Collections.Concurrent;
 
 namespace Garbagemanage
 {
@@ -26,19 +33,30 @@ namespace Garbagemanage
         {
             //初始化处理
             initMainPageInfo();
+            WSocketClient("ws://49.233.5.44:8080");
+            Start();
+            Delivery_show.Delivery_show.get_parent(this);
 
-
-            //PutInfosBLL putInfosBLL = new PutInfosBLL();
-            //Console.WriteLine(">>>>>>>>>>>");
-            //foreach (var item in putInfosBLL.test(1, 10))
-            //{
-            //    Console.WriteLine(item.PutName);
-            //}
-            //foreach (var item in putInfosBLL.getRecordListByDay("2023", "12"))
-            //{
-            //    Console.WriteLine(item.KitchenWaste);
-            //}
         }
+        public bool _ping()
+        {
+            try
+            {
+                System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
+                System.Net.NetworkInformation.PingReply pr;
+                pr = ping.Send("www.baidu.com");
+                if (pr.Status != System.Net.NetworkInformation.IPStatus.Success)
+                {
+                    return false;
+                } 
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void initMainPageInfo()
         {   
             //tabPages.DrawMode = TabDrawMode.OwnerDrawFixed;
@@ -143,6 +161,10 @@ namespace Garbagemanage
                 Form form = FormUtility.GetOpenForm(frmName);//获取当前要打开的窗体是否已经打开
                 if (form == null)
                 {
+                    while (!_ping())
+                    {
+                        MessageBox.Show("请检查网络");
+                    }
                     //创建窗体
                     string spaceName = GetType().Namespace;//命名空间名
                     string fullName = spaceName + "." + url;//完整名称
@@ -247,6 +269,193 @@ namespace Garbagemanage
         {
             Environment.Exit(0);
         }
+
+        public static byte[] ByteCut(byte[] b, byte cut)
+        {
+            var list = new List<byte>();
+
+            list.AddRange(b);
+
+            for (var i = list.Count - 1; i >= 0; i--)
+            {
+                if (list[i] == cut)
+                    list.RemoveAt(i);
+            }
+            var lastbyte = new byte[list.Count];
+            for (var i = 0; i < list.Count; i++)
+            {
+                lastbyte[i] = list[i];
+            }
+            return lastbyte;
+        }
+        public void sendMessage(string message, string origin)
+        {
+            JObject json = new JObject();
+            json["message"] = message;
+            json["origin"] = origin;
+            _webSocket.Send(json.ToString());
+
+        }
+
+        public Action<string> MessageReceived;
+
+        private WebSocket4Net.WebSocket _webSocket;
+
+        /// <summary>
+        /// 检查重连线程
+        /// </summary>
+        Thread _thread;
+        bool _isRunning = false;
+
+        public string ServerPath { get; set; }
+        public void WSocketClient(string url)
+        {
+            ServerPath = url;
+            _webSocket = new WebSocket4Net.WebSocket(url);
+            _webSocket.Opened += WebSocket_Opened;
+            _webSocket.Error += WebSocket_Error;
+            _webSocket.Closed += WebSocket_Closed;
+            _webSocket.MessageReceived += WebSocket_MessageReceived;
+        }
+
+
+        /// <summary>
+        /// 连接方法
+        /// <returns></returns>
+        public bool Start()
+        {
+            bool result = true;
+            try
+            {
+                _webSocket.Open();
+                _isRunning = true;
+                _thread = new Thread(new ThreadStart(CheckConnection));
+                _thread.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                result = false;
+                _isRunning = false;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 消息收到事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WebSocket_MessageReceived(object sender, MessageReceivedEventArgs e)
+        {
+            Console.WriteLine("Received:" + e.Message);
+            JObject json = JObject.Parse(e.Message);
+
+            if ("wechat".Equals(json["origin"].ToString()) && "new Client".Equals(json["type"].ToString()) && !users.ContainsKey(json["clientId"].ToString()))
+            {
+                users.TryAdd(json["clientId"].ToString(), json["clientId"].ToString());
+            }
+            if (MessageReceived != null)
+                MessageReceived(e.Message);
+        }
+
+        /// <summary>
+        /// Socket关闭事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WebSocket_Closed(object sender, EventArgs e)
+        {
+            Console.WriteLine("websocket_Closed");
+        }
+
+        /// <summary>
+        /// Socket报错事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WebSocket_Error(object sender, EventArgs e)
+        {
+            Console.WriteLine("websocket_Error:" + e.ToString());
+        }
+
+        /// <summary>
+        /// Socket打开事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WebSocket_Opened(object sender, EventArgs e)
+        {
+            Console.WriteLine("websocket_Opened");
+           
+            sendMessage("hello", "platform");
+        }
+
+        /// <summary>
+        /// 检查重连线程
+        /// </summary>
+        private void CheckConnection()
+        {
+            do
+            {
+                try
+                {
+                    if (_webSocket.State != WebSocketState.Open && _webSocket.State != WebSocketState.Connecting)
+                    {
+                        Console.WriteLine("Reconnect websocket WebSocketState:" + _webSocket.State);
+
+                        _webSocket.Close();
+                        _webSocket.Open();
+
+                        Console.WriteLine("正在重连");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                Thread.Sleep(5000);
+            } while (_isRunning);
+        }
+
+        /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="Message"></param>
+        public string SendMessage(string str, string id)
+        {
+            JObject json = JObject.Parse(str);
+            foreach(var item in users)
+            {
+                json["receiverId"] = item.Value;
+                break;
+            }
+            
+            Console.WriteLine(json.ToString());
+            Task.Factory.StartNew(() =>
+            {
+                if (_webSocket != null && _webSocket.State == WebSocketState.Open)
+                {
+                    _webSocket.Send(json.ToString());
+                }
+            });
+            return "ret";
+        }
+        delegate string Delegate(string str, string org);
+
+        public void FunStartmain(object obj, object origin)
+        {
+
+            Delegate funDelegate = new Delegate(SendMessage);
+
+            IAsyncResult aResult = BeginInvoke(funDelegate, obj.ToString(), origin.ToString());
+
+            aResult.AsyncWaitHandle.WaitOne(1);
+        
+            string str = (string)EndInvoke(aResult);
+        }
+        
+        public static ConcurrentDictionary<string, string> users = new ConcurrentDictionary<string, string>();
     }
 
 }

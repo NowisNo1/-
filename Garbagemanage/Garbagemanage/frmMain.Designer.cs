@@ -1,4 +1,6 @@
-﻿namespace Garbagemanage
+﻿using System;
+
+namespace Garbagemanage
 {
     partial class frmMain
     {
@@ -18,6 +20,8 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+
+            
         }
 
         #region Windows Form Designer generated code
@@ -253,7 +257,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLoginInfo;

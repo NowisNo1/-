@@ -284,7 +284,16 @@ namespace Garbagemanage.Map
             }
             //调取results1中的行驶距离数据
             string path = "./resources/results/results1.txt";
-            StreamReader sr = new StreamReader(File.Open(path, FileMode.Open), Encoding.GetEncoding("GB2312"));
+            StreamReader sr = null;
+            try
+            {
+                sr = new StreamReader(File.Open(path, FileMode.Open), Encoding.GetEncoding("GB2312"));
+            }
+            catch (FileLoadException ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return;
+            }
             while (true)
             {
                 // 从上到下读取每一行数据
@@ -561,7 +570,16 @@ namespace Garbagemanage.Map
             //应用matlab算法
             //调用算法生成的文件
             string path = "./resources/results/results.txt";
-            StreamReader sr = new StreamReader(File.Open(path, FileMode.Open), Encoding.GetEncoding("GB2312"));
+            StreamReader sr = null;
+            try
+            {
+                sr = new StreamReader(File.Open(path, FileMode.Open), Encoding.GetEncoding("GB2312"));
+            }catch(FileLoadException ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return;
+            }
+            
             char[] KG = { ' ' };
             while (true)
             {

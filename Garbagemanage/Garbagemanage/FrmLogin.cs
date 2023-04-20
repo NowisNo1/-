@@ -26,6 +26,24 @@ namespace Garbagemanage
             txtUserPwd.Clear();
             lblerr.Visible = false;
         }
+        public bool _ping()
+        {
+            try
+            {
+                System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
+                System.Net.NetworkInformation.PingReply pr;
+                pr = ping.Send("www.baidu.com");
+                if (pr.Status != System.Net.NetworkInformation.IPStatus.Success)
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
         /// <summary>
         /// 登陆实现
         /// </summary>
@@ -58,6 +76,10 @@ namespace Garbagemanage
             //登录操作及响应
             string reLoginStr = "";
             //登录
+            while (!_ping())
+            {
+                MessageBox.Show("请检查网络");
+            }
             reLoginStr = userBLL.Login(userInfo);
             if (reLoginStr == "1")
             {
@@ -65,7 +87,7 @@ namespace Garbagemanage
                 frmMain frmMain = new frmMain();
                 frmMain.Tag = userName;
                 frmMain.Show();
-                this.Hide();
+                Hide(); 
             }
             else
             {

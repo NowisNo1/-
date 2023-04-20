@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -188,9 +189,8 @@
             this.PerformLayout();
 
         }
-
+        
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblerr;
         private System.Windows.Forms.Label label2;
