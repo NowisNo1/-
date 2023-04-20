@@ -85,7 +85,7 @@ namespace Garbagemanage.Delivery_show
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Delivery_show";
-            this.Text = "Delivery_show";
+            this.Text = "投放信息显示";
             this.ResumeLayout(false);
             this.PerformLayout();
 

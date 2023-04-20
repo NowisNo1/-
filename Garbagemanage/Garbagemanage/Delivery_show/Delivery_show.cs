@@ -29,7 +29,7 @@ namespace Garbagemanage.Delivery_show
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string new_str = "向清运人员发送清运任务" + "具体内容：前往 x 站点进行垃圾清运工作\n";
+            string new_str = "向清运人员发送清运任务" + "具体内容：前往 x 站点进行垃圾清运工作" + Environment.NewLine;
             textBox1.Text += new_str;
            
             JObject json = new JObject();

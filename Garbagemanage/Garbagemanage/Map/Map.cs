@@ -159,14 +159,14 @@ namespace Garbagemanage.Map
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.gMapControl1.MapProvider = AMapProvider.Instance;
+            gMapControl1.MapProvider = AMapProvider.Instance;
 
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
             gMapControl1.MinZoom = 4;      //最小比例
             gMapControl1.MaxZoom = 18;     //最大比例
             gMapControl1.Zoom = 16;        //当前比例
             gMapControl1.ShowCenter = false;//不显示中心十字标记
-            this.gMapControl1.DragButton = System.Windows.Forms.MouseButtons.Left;//左键拖拽地图
+            gMapControl1.DragButton = System.Windows.Forms.MouseButtons.Left;//左键拖拽地图
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;//鼠标缩放模式
             gMapControl1.Position = new PointLatLng(39.875357, 116.480595);//地图中心坐标，（纬度，经度）
             
