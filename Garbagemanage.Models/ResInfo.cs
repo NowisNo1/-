@@ -63,5 +63,7 @@ namespace Garbagemanage.Models
         /// 是否为特殊人群
         /// </summary>
         public bool Special { get; set; }
+
+        public int IsDeleted { get; set; }
     }
 }

@@ -142,8 +142,31 @@ namespace Garbagemanage.User
             string age = txtAge.Text.Trim();
             bool special = chkState.Checked;
             string useridnumber = txtUserIDnumber.Text.Trim();
-            int integral = Convert.ToInt16(txtIntegarl.Text.Trim());
-            double weight = Convert.ToDouble(txtWeight.Text.Trim());
+            int integral; //= Convert.ToInt16(txtIntegarl.Text.Trim()); 这种定义方式不输入信息会报错，改成下面的检查信息方式
+            double weight;   //= Convert.ToDouble(txtWeight.Text.Trim());
+
+            try
+            {
+                weight = Convert.ToDouble(txtWeight.Text.Trim());
+            }
+            catch
+            {
+                lblerr.SetErrorMsg("请输入投放重量！");
+                txtUserNumber.Focus();
+                return;
+            }
+
+            try
+            {
+                integral = Convert.ToInt16(txtIntegarl.Text.Trim());
+            }
+            catch
+            {
+                lblerr.SetErrorMsg("请输入居民积分！");
+                txtUserNumber.Focus();
+                return;
+            }
+
             //信息检查
             if (string.IsNullOrEmpty(userNo))
             {
@@ -221,25 +244,28 @@ namespace Garbagemanage.User
                 Sex = sex,
                 Phone = phone,
                 Age = age,
+                UserIDnumber = useridnumber,
                 Special = special,
                 UserVillage = userVillage,
-                UserWeight = 0.0// weight,
+                UserWeight = weight,// weight,
+                UserIntegral = integral,
+                IsDeleted = 0
             };
             //提交处理
             if (actType == 1)
             {
-                int reId = 0;//stationBLL.AddStation(station);
+                int reId = resBLL.AddUser(user);
                 if (reId > 0)
                 {
-                    //MessageHelper.Info("添加站点", $"站点：{stationName} 添加成功！");
-                    //station.StationId = reId;
-                    ////添加站点信息到站点列表中
-                    //dgvStationList.UpdateDgv(1, station, 0);
-                    //editStationId = reId;
-                    //buttok.Text = "修改";
+                    MessageHelper.Info("添加居民", $"居民：{userName} 添加成功！");
+                    user.UserId = reId;
+                    ////添加居民信息到站点列表中
+                    dgvUserList.UpdateDgv(1, user, 0);  
+                    editUserId = reId;
+                    buttok.Text = "修改";
                     //actType = 2;
-                    //oldName = stationName;
-                    //oldNo = stationNo;
+                    oldName = userName;
+                    oldNo = userNo;
                 }
                 else
                 {
@@ -249,20 +275,20 @@ namespace Garbagemanage.User
             }
             else
             {
-                //bool blEdit = stationBLL.UpdateStation(station);
-                //if (blEdit)
-                //{
-                //    MessageHelper.Info("修改站点", $"站点：{stationName} 修改成功！");
-                //    oldName = stationName;
-                //    oldNo = stationNo;
-                //    //更新站点信息到站点列表中
-                //    dgvStationList.UpdateDgv(2, station, editStationId);
-                //}
-                //else
-                //{
-                //    lblerr.SetErrorMsg("站点信息修改失败！");
-                //    return;
-                //}
+                bool blEdit = resBLL.UpdateUser(user);
+                if (blEdit)
+                {
+                    MessageHelper.Info("修改居民", $"居民：{userName} 修改成功！");
+                    oldName = userName;
+                    oldNo = userNo;
+                //    //更新居民信息到站点列表中
+                    dgvUserList.UpdateDgv(2, user, editUserId);
+                }
+                else
+                {
+                    lblerr.SetErrorMsg("站点信息修改失败！");
+                    return;
+                }
             }
         }
 
