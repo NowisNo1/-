@@ -142,12 +142,12 @@ namespace Garbagemanage.User
             string age = txtAge.Text.Trim();
             bool special = chkState.Checked;
             string useridnumber = txtUserIDnumber.Text.Trim();
-            //int integral = Convert.ToInt16(txtIntegarl.Text.Trim()); 这种定义方式不输入信息会报错，改成下面的检查信息方式
-            //double weight = Convert.ToDouble(txtWeight.Text.Trim());
+            int integral; //= Convert.ToInt16(txtIntegarl.Text.Trim()); 这种定义方式不输入信息会报错，改成下面的检查信息方式
+            double weight;   //= Convert.ToDouble(txtWeight.Text.Trim());
 
             try
             {
-                double weight = Convert.ToDouble(txtWeight.Text.Trim());
+                weight = Convert.ToDouble(txtWeight.Text.Trim());
             }
             catch
             {
@@ -158,7 +158,7 @@ namespace Garbagemanage.User
 
             try
             {
-                int integral = Convert.ToInt16(txtIntegarl.Text.Trim());
+                integral = Convert.ToInt16(txtIntegarl.Text.Trim());
             }
             catch
             {
@@ -247,7 +247,8 @@ namespace Garbagemanage.User
                 UserIDnumber = useridnumber,
                 Special = special,
                 UserVillage = userVillage,
-                UserWeight = 0.0,// weight,
+                UserWeight = weight,// weight,
+                UserIntegral = integral,
                 IsDeleted = 0
             };
             //提交处理
@@ -259,7 +260,7 @@ namespace Garbagemanage.User
                     MessageHelper.Info("添加居民", $"居民：{userName} 添加成功！");
                     user.UserId = reId;
                     ////添加居民信息到站点列表中
-                    dgvUserList.UpdateDgv(1, user, 0);
+                    dgvUserList.UpdateDgv(1, user, 0);  
                     editUserId = reId;
                     buttok.Text = "修改";
                     //actType = 2;
