@@ -75,6 +75,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.uPager1 = new Garbagemanage.UControls.UPager();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).BeginInit();
             this.SuspendLayout();
@@ -403,7 +404,7 @@
             this.ColChk.FillWeight = 50F;
             this.ColChk.HeaderText = "选择";
             this.ColChk.Name = "ColChk";
-            this.ColChk.Width = 44;
+            this.ColChk.Width = 60;
             // 
             // colStationid
             // 
@@ -596,7 +597,7 @@
             this.uPager1.CurrentPage = 1;
             this.uPager1.Location = new System.Drawing.Point(12, 537);
             this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
+            this.uPager1.PageSize = 25;
             this.uPager1.Record = 0;
             this.uPager1.Size = new System.Drawing.Size(1107, 46);
             this.uPager1.StartIndex = 1;

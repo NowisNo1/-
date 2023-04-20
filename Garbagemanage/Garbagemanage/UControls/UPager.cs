@@ -23,7 +23,6 @@ namespace Garbagemanage.UControls
         //定义委托
         public delegate void PageHandler(object sender, EventArgs e);
         //声明事件
-        public event PageHandler PageChanged;//翻页事件
 
         private int record=0;
         /// <summary>
@@ -41,7 +40,7 @@ namespace Garbagemanage.UControls
         //当前页开始索引
         public int StartIndex
         {
-            get { return (CurrentPage-1)*PageSize+1; }
+            get { return ((CurrentPage-1)*PageSize) + 1; }
             set { startIndex = value; }
         }
 
@@ -94,16 +93,25 @@ namespace Garbagemanage.UControls
 
         private void UPager_Load(object sender, EventArgs e)
         {
-       
+            OnPageChanged();
         }
 
         private void OnPageChanged()
         {
-            if (PageChanged != null)
+            InitPageInfo();
+            switch (type)
             {
-                PageChanged(this, new EventArgs());
-                InitPageInfo();
+                case "FrmStationList":
+                    ((Garbagemanage.BM.FrmStationList)instance).FunStartmain();
+                    break;
+                case "FrmSpecialList":
+                    ((Garbagemanage.User.FrmSpecialList)instance).FunStartmain();
+                    break;
+                case "FrmUserList":
+                    ((Garbagemanage.User.FrmUserList)instance).FunStartmain();
+                    break;
             }
+            
         }
 
         /// <summary>
@@ -111,18 +119,19 @@ namespace Garbagemanage.UControls
         /// </summary>
         private void InitPageInfo()
         {
-            if(Record>0)
+            
+            if (Record > 0)
             {
                 if(CurrentPage > PageNum)
                      CurrentPage = PageNum;
                 if (CurrentPage < 1)
                     CurrentPage = 1;
             }
-            if(CurrentPage==1)
+            if(CurrentPage == 1)
             {
                 btnFirst.Enabled = false;
                 btnPrev.Enabled = false;
-                if(CurrentPage==PageNum)
+                if(CurrentPage == PageNum)
                 {
                     btnNext.Enabled = false;
                     btnLast.Enabled = false;
@@ -135,7 +144,7 @@ namespace Garbagemanage.UControls
                     btnGo.Enabled = true;
                 }
             }
-            else if(CurrentPage>1)
+            else if(CurrentPage > 1)
             {
                 btnFirst.Enabled = true;
                 btnPrev.Enabled = true;
@@ -154,14 +163,19 @@ namespace Garbagemanage.UControls
 
             foreach(Control c in this.Controls)
             {
-                if(c is Button && c.Enabled==false)
+                if(c is Button)
                 {
-                    c.BackColor = Color.DarkGray;//按钮不可用时背景
+                    if(c.Enabled == false)
+                        c.BackColor = Color.DarkGray;   //按钮不可用时背景
+                    if(c.Enabled == true)
+                        c.BackColor = Color.RoyalBlue;
                 }
             }
 
             lblPageInfo.Text = $"共 {Record} 条记录，共 {PageNum} 页  当前第 {CurrentPage} 页";
+            
             txtPage.Text = CurrentPage.ToString();
+            
         }
 
         /// <summary>
@@ -218,7 +232,9 @@ namespace Garbagemanage.UControls
                 OnPageChanged();//翻页
             }
         }
-
+        
+        public Form instance { get; set; }
+        public string type { get; set; }
         /// <summary>
         /// 转到指定页
         /// </summary>
@@ -244,4 +260,5 @@ namespace Garbagemanage.UControls
             OnPageChanged();
         }
     }
+    
 }

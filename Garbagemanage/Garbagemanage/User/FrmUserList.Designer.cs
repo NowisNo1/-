@@ -695,7 +695,7 @@
             this.uPager1.CurrentPage = 1;
             this.uPager1.Location = new System.Drawing.Point(12, 531);
             this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
+            this.uPager1.PageSize = 25;
             this.uPager1.Record = 0;
             this.uPager1.Size = new System.Drawing.Size(1107, 46);
             this.uPager1.StartIndex = 1;

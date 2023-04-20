@@ -19,6 +19,8 @@ namespace Garbagemanage.User
         public FrmUserList()
         {
             InitializeComponent();
+            uPager1.instance = this;
+            uPager1.type = "FrmUserList";
         }
         ResBLL resBLL = new ResBLL();
         int actType = 1;//信息提交状态  1-新增 2-修改
@@ -38,7 +40,20 @@ namespace Garbagemanage.User
 
             //InitUserInfo();
         }
-        private void FindUserList()
+        delegate string Delegate();
+
+        public void FunStartmain()
+        {
+
+            Delegate funDelegate = new Delegate(FindUserList);
+
+            IAsyncResult aResult = BeginInvoke(funDelegate);
+
+            aResult.AsyncWaitHandle.WaitOne(10);
+
+            string str = (string)EndInvoke(aResult);
+        }
+        private string FindUserList()
         {
             string keywords = textBox6.Text.Trim();
             bool showDel = chkShowDel.Checked;
@@ -62,6 +77,7 @@ namespace Garbagemanage.User
                 uPager1.Enabled = false;
             }
             SetActBtnsAndColVisible(showDel);
+            return "ret";
         }
         /// <summary>
         /// 查询
