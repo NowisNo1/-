@@ -59,9 +59,10 @@ namespace Garbagemanage
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -71,9 +72,10 @@ namespace Garbagemanage
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(77, 16);
+            this.label1.Location = new System.Drawing.Point(103, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 39);
+            this.label1.Size = new System.Drawing.Size(614, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "智慧城市生活垃圾分类系统管控平台";
             // 
@@ -83,9 +85,10 @@ namespace Garbagemanage
             this.lblLoginInfo.AutoSize = true;
             this.lblLoginInfo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoginInfo.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblLoginInfo.Location = new System.Drawing.Point(992, 39);
+            this.lblLoginInfo.Location = new System.Drawing.Point(1323, 49);
+            this.lblLoginInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginInfo.Name = "lblLoginInfo";
-            this.lblLoginInfo.Size = new System.Drawing.Size(131, 17);
+            this.lblLoginInfo.Size = new System.Drawing.Size(162, 19);
             this.lblLoginInfo.TabIndex = 2;
             this.lblLoginInfo.Text = "admin，欢迎使用系统";
             // 
@@ -98,20 +101,23 @@ namespace Garbagemanage
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1145, 69);
+            this.panel1.Size = new System.Drawing.Size(1527, 86);
             this.panel1.TabIndex = 0;
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 591);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 741);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1145, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1527, 25);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -120,7 +126,7 @@ namespace Garbagemanage
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.DimGray;
             this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(84, 20);
             this.toolStripStatusLabel1.Text = "登录时间：";
             // 
             // toolStripStatusLabel2
@@ -128,7 +134,7 @@ namespace Garbagemanage
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(5, 3, 0, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(112, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(141, 20);
             this.toolStripStatusLabel2.Text = "2023-3-14 8:55:49";
             // 
             // toolStripStatusLabel3
@@ -136,7 +142,7 @@ namespace Garbagemanage
             this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.DimGray;
             this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(84, 20);
             this.toolStripStatusLabel3.Text = "当前操作：";
             // 
             // toolStripStatusLabel4
@@ -144,7 +150,7 @@ namespace Garbagemanage
             this.toolStripStatusLabel4.ForeColor = System.Drawing.Color.Purple;
             this.toolStripStatusLabel4.Margin = new System.Windows.Forms.Padding(5, 3, 0, 2);
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(32, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(39, 20);
             this.toolStripStatusLabel4.Text = "首页";
             // 
             // tabPages
@@ -152,10 +158,11 @@ namespace Garbagemanage
             this.tabPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabPages.Location = new System.Drawing.Point(2, 111);
+            this.tabPages.Location = new System.Drawing.Point(3, 139);
+            this.tabPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPages.Name = "tabPages";
             this.tabPages.SelectedIndex = 0;
-            this.tabPages.Size = new System.Drawing.Size(1141, 477);
+            this.tabPages.Size = new System.Drawing.Size(1521, 596);
             this.tabPages.TabIndex = 4;
             this.tabPages.SelectedIndexChanged += new System.EventHandler(this.tabPages_SelectedIndexChanged);
             // 
@@ -163,9 +170,10 @@ namespace Garbagemanage
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1111, 109);
+            this.pictureBox2.Location = new System.Drawing.Point(1481, 136);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 22);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -180,11 +188,12 @@ namespace Garbagemanage
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(189)))), ((int)(((byte)(240)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.综合信息查询ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 69);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 86);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1145, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1527, 50);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -197,7 +206,7 @@ namespace Garbagemanage
             this.综合信息查询ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.综合信息查询ToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.综合信息查询ToolStripMenuItem.Name = "综合信息查询ToolStripMenuItem";
-            this.综合信息查询ToolStripMenuItem.Size = new System.Drawing.Size(118, 36);
+            this.综合信息查询ToolStripMenuItem.Size = new System.Drawing.Size(146, 46);
             this.综合信息查询ToolStripMenuItem.Text = "综合信息查询";
             // 
             // 站点信息ToolStripMenuItem
@@ -206,7 +215,7 @@ namespace Garbagemanage
             this.站点信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.站点信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.站点信息ToolStripMenuItem.Name = "站点信息ToolStripMenuItem";
-            this.站点信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.站点信息ToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.站点信息ToolStripMenuItem.Text = "站点信息";
             // 
             // 居民信息ToolStripMenuItem
@@ -215,7 +224,7 @@ namespace Garbagemanage
             this.居民信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.居民信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.居民信息ToolStripMenuItem.Name = "居民信息ToolStripMenuItem";
-            this.居民信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.居民信息ToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.居民信息ToolStripMenuItem.Text = "居民信息";
             // 
             // 员工信息ToolStripMenuItem
@@ -224,19 +233,21 @@ namespace Garbagemanage
             this.员工信息ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.员工信息ToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.员工信息ToolStripMenuItem.Name = "员工信息ToolStripMenuItem";
-            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.员工信息ToolStripMenuItem.Text = "员工信息";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 613);
+            this.ClientSize = new System.Drawing.Size(1527, 766);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabPages);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.Text = "智慧城市生活垃圾分类系统管控平台";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
