@@ -14,7 +14,7 @@ namespace Garbagemanage.Map
         {
             MaxZoom = null;
             RefererUrl = "http://www.amap.com/";
-            Copyright = string.Format("©{0} 高德 Corporation, ©{0} NAVTEQ, ©{0} Image courtesy of NASA", DateTime.Today.Year);    
+            Copyright = string.Format("©{0} 高德 GS(2021)6375号", DateTime.Today.Year);    
         }
 
         public override PureProjection Projection
